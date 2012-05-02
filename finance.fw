@@ -4,7 +4,7 @@
 #
 #  Firewall Builder  fwb_ipt v4.2.2.3541
 #
-#  Generated Tue Nov  8 06:48:51 2011 CST by ericm
+#  Generated Tue May  1 22:39:33 2012 CDT by ericm
 #
 # files: * finance.fw /etc/finance.fw
 #
@@ -352,6 +352,7 @@ script_body() {
     # Allow other hosts on LAN to get http, ssh, icmp and DNS from localhost
     $IPTABLES -N Cid8629X7435.0
     $IPTABLES -A INPUT  -s 192.168.1.0/24   -m state --state NEW  -j Cid8629X7435.0
+    $IPTABLES -A INPUT  -s 192.168.33.0/24   -m state --state NEW  -j Cid8629X7435.0
     $IPTABLES -N RULE_5
     $IPTABLES -A Cid8629X7435.0 -p icmp  -m icmp  --icmp-type 3  -j RULE_5
     $IPTABLES -A Cid8629X7435.0 -p icmp  -m icmp  --icmp-type 0/0   -j RULE_5
@@ -362,14 +363,17 @@ script_body() {
     $IPTABLES -N Cid8629X7435.1
     for i_wlan0 in $i_wlan0_list
     do
-    test -n "$i_wlan0" && $IPTABLES -A INPUT  -s 192.168.1.0/24   -d $i_wlan0   -m state --state NEW  -j Cid8629X7435.1 
+    test -n "$i_wlan0" && $IPTABLES -A INPUT  -d $i_wlan0   -m state --state NEW  -j Cid8629X7435.1 
     done
-    $IPTABLES -A Cid8629X7435.1 -p icmp  -m icmp  --icmp-type 3  -j RULE_5
-    $IPTABLES -A Cid8629X7435.1 -p icmp  -m icmp  --icmp-type 0/0   -j RULE_5
-    $IPTABLES -A Cid8629X7435.1 -p icmp  -m icmp  --icmp-type 11/0   -j RULE_5
-    $IPTABLES -A Cid8629X7435.1 -p icmp  -m icmp  --icmp-type 11/1   -j RULE_5
-    $IPTABLES -A Cid8629X7435.1 -p tcp -m tcp  -m multiport  --dports 53,80,30000,8080  -j RULE_5
-    $IPTABLES -A Cid8629X7435.1 -p udp -m udp  --dport 53  -j RULE_5
+    $IPTABLES -N Cid8629X7435.2
+    $IPTABLES -A Cid8629X7435.1  -s 192.168.1.0/24   -j Cid8629X7435.2
+    $IPTABLES -A Cid8629X7435.1  -s 192.168.33.0/24   -j Cid8629X7435.2
+    $IPTABLES -A Cid8629X7435.2 -p icmp  -m icmp  --icmp-type 3  -j RULE_5
+    $IPTABLES -A Cid8629X7435.2 -p icmp  -m icmp  --icmp-type 0/0   -j RULE_5
+    $IPTABLES -A Cid8629X7435.2 -p icmp  -m icmp  --icmp-type 11/0   -j RULE_5
+    $IPTABLES -A Cid8629X7435.2 -p icmp  -m icmp  --icmp-type 11/1   -j RULE_5
+    $IPTABLES -A Cid8629X7435.2 -p tcp -m tcp  -m multiport  --dports 53,80,30000,8080  -j RULE_5
+    $IPTABLES -A Cid8629X7435.2 -p udp -m udp  --dport 53  -j RULE_5
     $IPTABLES -A RULE_5  -j ULOG  --ulog-nlgroup 1 --ulog-prefix "ACCPT - LAN http ssh DNS ICMP" --ulog-qthreshold 1
     $IPTABLES -A RULE_5  -j ACCEPT
     # 
@@ -390,7 +394,7 @@ script_body() {
     $IPTABLES -N Cid9628X11999.1
     $IPTABLES -A INPUT  -j Cid9628X11999.1
     $IPTABLES -A FORWARD  -j Cid9628X11999.1
-    $IPTABLES -A Cid9628X11999.1  -s 192.168.1.0/24   -j RETURN
+    $IPTABLES -A Cid9628X11999.1  -s 192.168.33.0/24   -j RETURN
     $IPTABLES -N RULE_6_3
     $IPTABLES -A Cid9628X11999.1  -j RULE_6_3
     $IPTABLES -A RULE_6_3  -j ULOG  --ulog-nlgroup 1 --ulog-prefix "DENY - NOT MINE" --ulog-qthreshold 1
@@ -461,7 +465,7 @@ test -z "$cmd" && {
 
 case "$cmd" in
     start)
-        log "Activating firewall script generated Tue Nov  8 06:48:51 2011 by ericm"
+        log "Activating firewall script generated Tue May  1 22:39:33 2012 by ericm"
         check_tools
          prolog_commands 
         check_run_time_address_table_files

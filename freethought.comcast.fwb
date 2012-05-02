@@ -1323,7 +1323,9 @@
           </HostOptions>
         </Host>
       </ObjectGroup>
-      <ObjectGroup id="id464BA3F0" name="Networks" comment="" ro="False"/>
+      <ObjectGroup id="id464BA3F0" name="Networks" comment="" ro="False">
+        <Network id="id8656X14477" name="net-192.168.33.0 - CodeHaus" comment="192.168.33.0/24 - Address often used for home and small office networks.&#10;" ro="False" address="192.168.33.0" netmask="255.255.255.0"/>
+      </ObjectGroup>
       <ObjectGroup id="id464BA3F1" name="Address Ranges" comment="" ro="False"/>
     </ObjectGroup>
     <ServiceGroup id="id464BA3F2" name="Services" comment="" ro="False">
@@ -4750,7 +4752,7 @@
           <Option name="verify_interfaces">true</Option>
         </FirewallOptions>
       </Firewall>
-      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1320756531" lastInstalled="0" lastModified="1320756517" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
+      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1320756531" lastInstalled="0" lastModified="1335929959" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
         <NAT id="id13320X18474" name="NAT" comment="" ro="False" ipv4_rule_set="False" ipv6_rule_set="False" top_rule_set="True">
           <RuleSetOptions/>
         </NAT>
@@ -4927,6 +4929,7 @@
           <PolicyRule id="id8629X7435" disabled="False" group="" log="True" position="5" action="Accept" direction="Both" comment="Allow other hosts on LAN to get http, ssh, icmp and DNS from localhost">
             <Src neg="False">
               <ObjectRef ref="id3DC75CE7-1"/>
+              <ObjectRef ref="id8656X14477"/>
             </Src>
             <Dst neg="False">
               <ObjectRef ref="id13302X18474"/>
@@ -4986,7 +4989,7 @@
           <PolicyRule id="id9628X11999" disabled="False" group="" log="True" position="6" action="Deny" direction="Both" comment="">
             <Src neg="True">
               <ObjectRef ref="id13302X18474"/>
-              <ObjectRef ref="id3DC75CE7-1"/>
+              <ObjectRef ref="id8656X14477"/>
             </Src>
             <Dst neg="False">
               <ObjectRef ref="sysid0"/>
