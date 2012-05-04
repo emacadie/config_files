@@ -134,9 +134,9 @@ PATH=/home/ericm/scala/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$JAVA_HOM
 # S3
 export S3_BUCKET=media.dsch
 echo $S3_BUCKET
-export S3_KEY=AKIAJ6LQSKCQCLRRGSVQ
+export S3_KEY=
 echo $S3_KEY
-export S3_SECRET=CrMYbyr++k9H8XM+e4jgwxOdZiI+Z9UhwxebH0AA
+export S3_SECRET=
 echo $S3_SECRET
 
 
