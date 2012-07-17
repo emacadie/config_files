@@ -117,27 +117,19 @@ alias findBackup='find . -name "*~"'
 alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
 alias psFire='ps -deaf | grep fire'
 
-# GEMSHOME=/var/lib/gems/1.9.1/bin
-
 #- Java
-# export JAVA_HOME=/usr/local/java/jdk1.6.0_26
-# export JDK_HOME=/usr/local/java/jdk1.6.0_26
-
 export JAVA_HOME=/usr/local/java/jdk1.7.0
 export JDK_HOME=/usr/local/java/jdk1.7.0
-
-export GROOVY_HOME=/zEKM/groovy
-export GRAILS_HOME=/zEKM/grails
-#- export PATH=$JAVA_HOME/bin:$PATH
-# PATH=$JAVA_HOME/bin:/zEKM/jarFiles/android-sdk-linux_86/tools:$PATH
-# PATH=/home/ericm/scala/bin:/zEKM/jarFiles/apache-maven-2.2.1/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux_x86/tools:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$PATH
-PATH=/home/ericm/scala/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:/home/ericm/scala-2.9.0.1/bin:$PATH
-
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 alias netbeans='/usr/local/netbeans-7.0.1/bin/netbeans'
+alias ant=/home/ericm/tmp/Java/apache/apache-ant-1.8.2/bin/ant
+
+#- export PATH=$JAVA_HOME/bin:$PATH
+PATH=/home/ericm/scala/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+
 #- for git
 export EDITOR=nano
-alias ant=/home/ericm/tmp/Java/apache/apache-ant-1.8.2/bin/ant
+
 # This is a good place to source rvm v v v
   [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"  # This loads RVM into a shell session.
 
