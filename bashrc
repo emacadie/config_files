@@ -117,6 +117,7 @@ alias findBackup='find . -name "*~"'
 alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
 alias psFire='ps -deaf | grep fire'
 alias vgrep='grep -v'
+alias igrep='grep -i'
 
 #- Java
 export JAVA_HOME=/usr/local/java/jdk1.7.0
