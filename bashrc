@@ -123,11 +123,14 @@ alias igrep='grep -i'
 export JAVA_HOME=/usr/local/java/jdk1.7.0
 export JDK_HOME=/usr/local/java/jdk1.7.0
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
-alias netbeans='/usr/local/netbeans-7.0.1/bin/netbeans'
+alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
 alias ant=/home/ericm/tmp/Java/apache/apache-ant-1.8.2/bin/ant
+export PLAY=/home/ericm/jarFiles/play-2.0.4
+GROOVY_HOME=/home/ericm/tmp/groovy/groovy-2.1.0
+GRAILS_HOME=/home/ericm/tmp/groovy/grails-2.2.0
 
 #- export PATH=$JAVA_HOME/bin:$PATH
-PATH=/home/ericm/scala/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+PATH=$GROOVY_HOME/bin:$GRAILS_HOME/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$PLAY:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
 
 #- for git
 export EDITOR=nano
@@ -138,3 +141,4 @@ export EDITOR=nano
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #- EOF
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
