@@ -118,6 +118,7 @@ alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
 alias psFire='ps -deaf | grep fire'
 alias vgrep='grep -v'
 alias igrep='grep -i'
+alias mkdirpv='mkdir --parents --verbose'
 
 #- Java
 export JAVA_HOME=/usr/local/java/jdk1.7.0
@@ -128,9 +129,9 @@ alias ant=/home/ericm/tmp/Java/apache/apache-ant-1.8.2/bin/ant
 export PLAY=/home/ericm/jarFiles/play-2.0.4
 GROOVY_HOME=/home/ericm/tmp/groovy/groovy-2.1.0
 GRAILS_HOME=/home/ericm/tmp/groovy/grails-2.2.0
-
+GRADLE_HOME=/home/ericm/tmp/groovy/gradle-1.4
 #- export PATH=$JAVA_HOME/bin:$PATH
-PATH=$GROOVY_HOME/bin:$GRAILS_HOME/bin:/home/ericm/jarFiles/apache-maven-3.0.3/bin:$PLAY:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+PATH=$GROOVY_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:/home/ericm/jarFiles/apache-maven-3.0.5/bin:$PLAY:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
 
 #- for git
 export EDITOR=nano
