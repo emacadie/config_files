@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE FWObjectDatabase SYSTEM "fwbuilder.dtd">
-<FWObjectDatabase xmlns="http://www.fwbuilder.org/1.0/" version="22" lastModified="1320211200" id="root">
+<FWObjectDatabase xmlns="http://www.fwbuilder.org/1.0/" version="20" lastModified="1320211200" id="root">
   <Library id="syslib000" color="#d4f8ff" name="Standard" comment="Standard objects" ro="True">
     <AnyNetwork id="sysid0" name="Any" comment="Any Network" ro="False" address="0.0.0.0" netmask="0.0.0.0"/>
     <AnyIPService id="sysid1" protocol_num="0" name="Any" comment="Any IP Service" ro="False"/>
@@ -51,9 +51,9 @@
             <PolicyInstallScript arguments="" command="" enabled="False"/>
           </Management>
           <HostOptions>
-            <Option name="snmp_contact"/>
-            <Option name="snmp_description"/>
-            <Option name="snmp_location"/>
+            <Option name="snmp_contact"></Option>
+            <Option name="snmp_description"></Option>
+            <Option name="snmp_location"></Option>
             <Option name="use_mac_addr">false</Option>
             <Option name="use_mac_addr_filter">False</Option>
           </HostOptions>
@@ -69,9 +69,9 @@
             <PolicyInstallScript arguments="" command="" enabled="False"/>
           </Management>
           <HostOptions>
-            <Option name="snmp_contact"/>
-            <Option name="snmp_description"/>
-            <Option name="snmp_location"/>
+            <Option name="snmp_contact"></Option>
+            <Option name="snmp_description"></Option>
+            <Option name="snmp_location"></Option>
             <Option name="use_mac_addr">false</Option>
             <Option name="use_mac_addr_filter">False</Option>
           </HostOptions>
@@ -92,13 +92,6 @@
         <NetworkIPv6 id="id2383X75851" name="link-local ipv6" comment="RFC4291   Link-local unicast net" ro="False" address="fe80::" netmask="10"/>
         <NetworkIPv6 id="id2685X75851" name="multicast ipv6" comment="RFC4291  ipv6 multicast addresses" ro="False" address="ff00::" netmask="8"/>
         <NetworkIPv6 id="id2986X75851" name="experimental ipv6" comment="RFC2928, RFC4773 &#10;&#10;&quot;The block of Sub-TLA IDs assigned to the IANA&#10;(i.e., 2001:0000::/29 - 2001:01F8::/29) is for&#10;assignment for testing and experimental usage to&#10;support activities such as the 6bone, and&#10;for new approaches like exchanges.&quot;  [RFC2928]&#10;&#10;" ro="False" address="2001::" netmask="23"/>
-        <Network id="id3289X12564" name="TEST-NET-2" comment="RFC 5735&#10;RFC 5737&#10;" ro="False" address="198.51.100.0" netmask="255.255.255.0"/>
-        <Network id="id3300X12564" name="TEST-NET-3" comment="RFC 5735&#10;RFC 5737" ro="False" address="203.0.113.0" netmask="255.255.255.0"/>
-        <Network id="id3311X12564" name="Benchmark tests network" comment="RFC 5735" ro="False" address="198.18.0.0" netmask="255.254.0.0"/>
-        <NetworkIPv6 id="id3326X12564" name="mapped-ipv4" comment="" ro="False" address="::ffff:0.0.0.0" netmask="96"/>
-        <NetworkIPv6 id="id3341X12564" name="translated-ipv4" comment="" ro="False" address="::ffff:0:0:0" netmask="96"/>
-        <NetworkIPv6 id="id3350X12564" name="Teredo" comment="" ro="False" address="2001::" netmask="32"/>
-        <NetworkIPv6 id="id3359X12564" name="unique-local" comment="" ro="False" address="fc00::" netmask="7"/>
       </ObjectGroup>
       <ObjectGroup id="stdid15" name="Address Ranges" comment="" ro="False">
         <AddressRange id="id3F6D115C" name="broadcast" comment="" ro="False" start_address="255.255.255.255" end_address="255.255.255.255"/>
@@ -107,17 +100,17 @@
     </ObjectGroup>
     <ServiceGroup id="stdid05" name="Services" comment="" ro="False">
       <CustomService id="stdid14_1" name="ESTABLISHED" comment="This service matches all packets which are part of network connections established through the firewall, or connections 'related' to those established through the firewall. Term 'established' refers to the state tracking mechanism which exists inside iptables and other stateful firewalls and does not mean any particular combination of packet header options. Packet is considered to correspond to the state 'ESTABLISHED' if it belongs to the network session, for which proper initiation has been seen by the firewall, so its stateful inspection module made appropriate record in the state table. Usually stateful firewalls keep track of network connections using not only tcp protocol, but also udp and sometimes even icmp protocols. 'RELATED' describes packet belonging to a separate network connection, related to the session firewall is keeping track of. One example is FTP command and FTP data sessions." ro="False" protocol="any" address_family="ipv4">
-        <CustomServiceCommand platform="Undefined"/>
+        <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
         <CustomServiceCommand platform="iosacl">established</CustomServiceCommand>
-        <CustomServiceCommand platform="ipfilter"/>
+        <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
         <CustomServiceCommand platform="ipfw">established</CustomServiceCommand>
         <CustomServiceCommand platform="iptables">-m state --state ESTABLISHED,RELATED</CustomServiceCommand>
         <CustomServiceCommand platform="procurve_acl">established</CustomServiceCommand>
       </CustomService>
       <CustomService id="stdid14_2" name="ESTABLISHED ipv6" comment="This service matches all packets which are part of network connections established through the firewall, or connections 'related' to those established through the firewall. Term 'established' refers to the state tracking mechanism which exists inside iptables and other stateful firewalls and does not mean any particular combination of packet header options. Packet is considered to correspond to the state 'ESTABLISHED' if it belongs to the network session, for which proper initiation has been seen by the firewall, so its stateful inspection module made appropriate record in the state table. Usually stateful firewalls keep track of network connections using not only tcp protocol, but also udp and sometimes even icmp protocols. 'RELATED' describes packet belonging to a separate network connection, related to the session firewall is keeping track of. One example is FTP command and FTP data sessions." ro="False" protocol="any" address_family="ipv6">
-        <CustomServiceCommand platform="Undefined"/>
+        <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
         <CustomServiceCommand platform="iosacl">established</CustomServiceCommand>
-        <CustomServiceCommand platform="ipfilter"/>
+        <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
         <CustomServiceCommand platform="ipfw">established</CustomServiceCommand>
         <CustomServiceCommand platform="iptables">-m state --state ESTABLISHED,RELATED</CustomServiceCommand>
         <CustomServiceCommand platform="procurve_acl">established</CustomServiceCommand>
@@ -372,54 +365,54 @@
       </ServiceGroup>
       <ServiceGroup id="stdid13" name="Custom" comment="" ro="False">
         <CustomService id="id3B64EEA8" name="rpc" comment="works in iptables and requires patch-o-matic.&#10;For more information look for patch-o-matic on http://www.netfilter.org/" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="Undefined"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfilter"/>
-          <CustomServiceCommand platform="ipfw"/>
+          <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
           <CustomServiceCommand platform="iptables">-m record_rpc</CustomServiceCommand>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
         <CustomService id="id3B64EF4E" name="irc-conn" comment="IRC connection tracker, supports DCC.&#10;Works on iptables and requires patch-o-matic.&#10;For more information look for patch-o-matic on http://www.netfilter.org/&#10;" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="Undefined"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfilter"/>
-          <CustomServiceCommand platform="ipfw"/>
+          <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
           <CustomServiceCommand platform="iptables">-m irc</CustomServiceCommand>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
         <CustomService id="id3B64EF50" name="psd" comment="Port scan detector, works only on iptables and  requires patch-o-matic &#10;For more information look for patch-o-matic on http://www.netfilter.org/" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="Undefined"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfilter"/>
-          <CustomServiceCommand platform="ipfw"/>
+          <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
           <CustomServiceCommand platform="iptables">-m psd --psd-weight-threshold 5 --psd-delay-threshold 10000</CustomServiceCommand>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
         <CustomService id="id3B64EF52" name="string" comment="Matches a string in a whole packet, works in iptables and requires patch-o-matic.&#10;For more information look for patch-o-matic on http://www.netfilter.org/" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="Undefined"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfilter"/>
-          <CustomServiceCommand platform="ipfw"/>
+          <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
           <CustomServiceCommand platform="iptables">-m string --string test_pattern</CustomServiceCommand>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
         <CustomService id="id3B64EF54" name="talk" comment="Talk protocol support. Works in iptables and requires patch-o-matic.&#10;For more information look for patch-o-matic on http://www.netfilter.org/" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="Undefined"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfilter"/>
-          <CustomServiceCommand platform="ipfw"/>
+          <CustomServiceCommand platform="Undefined"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfilter"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
           <CustomServiceCommand platform="iptables">-m talk</CustomServiceCommand>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
       </ServiceGroup>
       <ServiceGroup id="stdid19" name="TagServices" comment="" ro="False"/>
@@ -459,7 +452,7 @@
             <IntervalRef ref="sysid2"/>
           </When>
           <PolicyRuleOptions>
-            <Option name="action_on_reject"/>
+            <Option name="action_on_reject"></Option>
             <Option name="connlimit_masklen">0</Option>
             <Option name="connlimit_value">0</Option>
             <Option name="firewall_is_part_of_any_and_networks">False</Option>
@@ -472,17 +465,17 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCEPT - freethought to any ping</Option>
-            <Option name="pf_classify_str"/>
-            <Option name="rule_name_accounting"/>
+            <Option name="pf_classify_str"></Option>
+            <Option name="rule_name_accounting"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -518,16 +511,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT- freethought http</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -549,7 +542,7 @@
             <IntervalRef ref="sysid2"/>
           </When>
           <PolicyRuleOptions>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">True</Option>
           </PolicyRuleOptions>
         </PolicyRule>
@@ -570,7 +563,7 @@
             <IntervalRef ref="sysid2"/>
           </When>
           <PolicyRuleOptions>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
           </PolicyRuleOptions>
         </PolicyRule>
         <PolicyRule id="id12010X29249" disabled="False" group="" log="True" position="4" action="Deny" direction="Both" comment="">
@@ -591,16 +584,16 @@
           </When>
           <PolicyRuleOptions>
             <Option name="log_prefix">DENY -Non-LAN loopback</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="pf_keep_state">False</Option>
             <Option name="pf_max_src_conn">0</Option>
             <Option name="pf_max_src_conn_flush">False</Option>
             <Option name="pf_max_src_conn_global">False</Option>
-            <Option name="pf_max_src_conn_overload_table"/>
+            <Option name="pf_max_src_conn_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_flush">False</Option>
             <Option name="pf_max_src_conn_rate_global">False</Option>
             <Option name="pf_max_src_conn_rate_num">0</Option>
-            <Option name="pf_max_src_conn_rate_overload_table"/>
+            <Option name="pf_max_src_conn_rate_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_seconds">0</Option>
             <Option name="pf_max_src_nodes">0</Option>
             <Option name="pf_max_src_states">0</Option>
@@ -639,25 +632,25 @@
             <Option name="hashlimit_gcinterval">0</Option>
             <Option name="hashlimit_max">0</Option>
             <Option name="hashlimit_mode">dstip</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT - LAN http ssh DNS ICMP</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="pf_keep_state">False</Option>
             <Option name="pf_max_src_conn">0</Option>
             <Option name="pf_max_src_conn_flush">False</Option>
             <Option name="pf_max_src_conn_global">False</Option>
-            <Option name="pf_max_src_conn_overload_table"/>
+            <Option name="pf_max_src_conn_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_flush">False</Option>
             <Option name="pf_max_src_conn_rate_global">False</Option>
             <Option name="pf_max_src_conn_rate_num">0</Option>
-            <Option name="pf_max_src_conn_rate_overload_table"/>
+            <Option name="pf_max_src_conn_rate_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_seconds">0</Option>
             <Option name="pf_max_src_nodes">0</Option>
             <Option name="pf_max_src_states">0</Option>
@@ -685,16 +678,16 @@
           </When>
           <PolicyRuleOptions>
             <Option name="log_prefix">ACCEPT -Any DNS</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="pf_keep_state">False</Option>
             <Option name="pf_max_src_conn">0</Option>
             <Option name="pf_max_src_conn_flush">False</Option>
             <Option name="pf_max_src_conn_global">False</Option>
-            <Option name="pf_max_src_conn_overload_table"/>
+            <Option name="pf_max_src_conn_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_flush">False</Option>
             <Option name="pf_max_src_conn_rate_global">False</Option>
             <Option name="pf_max_src_conn_rate_num">0</Option>
-            <Option name="pf_max_src_conn_rate_overload_table"/>
+            <Option name="pf_max_src_conn_rate_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_seconds">0</Option>
             <Option name="pf_max_src_nodes">0</Option>
             <Option name="pf_max_src_states">0</Option>
@@ -733,16 +726,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT - freethought pop3</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -765,17 +758,17 @@
             <IntervalRef ref="sysid2"/>
           </When>
           <PolicyRuleOptions>
-            <Option name="log_prefix"/>
-            <Option name="pf_classify_str"/>
+            <Option name="log_prefix"></Option>
+            <Option name="pf_classify_str"></Option>
             <Option name="pf_keep_state">False</Option>
             <Option name="pf_max_src_conn">0</Option>
             <Option name="pf_max_src_conn_flush">False</Option>
             <Option name="pf_max_src_conn_global">False</Option>
-            <Option name="pf_max_src_conn_overload_table"/>
+            <Option name="pf_max_src_conn_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_flush">False</Option>
             <Option name="pf_max_src_conn_rate_global">False</Option>
             <Option name="pf_max_src_conn_rate_num">0</Option>
-            <Option name="pf_max_src_conn_rate_overload_table"/>
+            <Option name="pf_max_src_conn_rate_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_seconds">0</Option>
             <Option name="pf_max_src_nodes">0</Option>
             <Option name="pf_max_src_states">0</Option>
@@ -814,16 +807,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT- freethought ssh to any</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -858,16 +851,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">DENY - port 113 to freethought</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">True</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -902,16 +895,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT- freethought to ntp</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -942,16 +935,16 @@
             <Option name="hashlimit_gcinterval">0</Option>
             <Option name="hashlimit_max">0</Option>
             <Option name="hashlimit_mode">dstip</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT-tomcat</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -982,16 +975,16 @@
             <Option name="hashlimit_gcinterval">0</Option>
             <Option name="hashlimit_max">0</Option>
             <Option name="hashlimit_mode">dstip</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT-tomcat outside</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -1015,7 +1008,7 @@
           <PolicyRuleOptions>
             <Option name="connlimit_masklen">0</Option>
             <Option name="connlimit_value">0</Option>
-            <Option name="firewall_is_part_of_any_and_networks"/>
+            <Option name="firewall_is_part_of_any_and_networks"></Option>
             <Option name="hashlimit_burst">0</Option>
             <Option name="hashlimit_dstlimit">False</Option>
             <Option name="hashlimit_expire">0</Option>
@@ -1025,16 +1018,16 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">DENY-cisco-router</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">True</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -1059,7 +1052,7 @@
             <Option name="connlimit_above_not">False</Option>
             <Option name="connlimit_masklen">0</Option>
             <Option name="connlimit_value">0</Option>
-            <Option name="firewall_is_part_of_any_and_networks"/>
+            <Option name="firewall_is_part_of_any_and_networks"></Option>
             <Option name="hashlimit_burst">0</Option>
             <Option name="hashlimit_dstlimit">False</Option>
             <Option name="hashlimit_expire">0</Option>
@@ -1069,17 +1062,17 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
             <Option name="limit_value_not">False</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT-github out</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -1104,7 +1097,7 @@
             <Option name="connlimit_above_not">False</Option>
             <Option name="connlimit_masklen">0</Option>
             <Option name="connlimit_value">0</Option>
-            <Option name="firewall_is_part_of_any_and_networks"/>
+            <Option name="firewall_is_part_of_any_and_networks"></Option>
             <Option name="hashlimit_burst">0</Option>
             <Option name="hashlimit_dstlimit">False</Option>
             <Option name="hashlimit_expire">0</Option>
@@ -1114,17 +1107,17 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
             <Option name="limit_value_not">False</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT-ssh22 out</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -1149,7 +1142,7 @@
             <Option name="connlimit_above_not">False</Option>
             <Option name="connlimit_masklen">0</Option>
             <Option name="connlimit_value">0</Option>
-            <Option name="firewall_is_part_of_any_and_networks"/>
+            <Option name="firewall_is_part_of_any_and_networks"></Option>
             <Option name="hashlimit_burst">0</Option>
             <Option name="hashlimit_dstlimit">False</Option>
             <Option name="hashlimit_expire">0</Option>
@@ -1159,17 +1152,17 @@
             <Option name="hashlimit_mode_dstport">False</Option>
             <Option name="hashlimit_mode_srcip">False</Option>
             <Option name="hashlimit_mode_srcport">False</Option>
-            <Option name="hashlimit_name"/>
+            <Option name="hashlimit_name"></Option>
             <Option name="hashlimit_size">0</Option>
-            <Option name="hashlimit_suffix"/>
+            <Option name="hashlimit_suffix"></Option>
             <Option name="hashlimit_value">0</Option>
             <Option name="limit_burst">0</Option>
-            <Option name="limit_suffix"/>
+            <Option name="limit_suffix"></Option>
             <Option name="limit_value">0</Option>
             <Option name="limit_value_not">False</Option>
-            <Option name="log_level"/>
+            <Option name="log_level"></Option>
             <Option name="log_prefix">ACCPT-hostgator out</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="stateless">False</Option>
             <Option name="ulog_nlgroup">1</Option>
           </PolicyRuleOptions>
@@ -1192,16 +1185,16 @@
           </When>
           <PolicyRuleOptions>
             <Option name="log_prefix">DENY -ANY 2 ANY</Option>
-            <Option name="pf_classify_str"/>
+            <Option name="pf_classify_str"></Option>
             <Option name="pf_keep_state">False</Option>
             <Option name="pf_max_src_conn">0</Option>
             <Option name="pf_max_src_conn_flush">False</Option>
             <Option name="pf_max_src_conn_global">False</Option>
-            <Option name="pf_max_src_conn_overload_table"/>
+            <Option name="pf_max_src_conn_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_flush">False</Option>
             <Option name="pf_max_src_conn_rate_global">False</Option>
             <Option name="pf_max_src_conn_rate_num">0</Option>
-            <Option name="pf_max_src_conn_rate_overload_table"/>
+            <Option name="pf_max_src_conn_rate_overload_table"></Option>
             <Option name="pf_max_src_conn_rate_seconds">0</Option>
             <Option name="pf_max_src_nodes">0</Option>
             <Option name="pf_max_src_states">0</Option>
@@ -1231,27 +1224,27 @@
       <FirewallOptions>
         <Option name="accept_established">True</Option>
         <Option name="accept_new_tcp_with_no_syn">True</Option>
-        <Option name="action_on_reject"/>
-        <Option name="activationCmd"/>
-        <Option name="admUser"/>
-        <Option name="altAddress"/>
+        <Option name="action_on_reject"></Option>
+        <Option name="activationCmd"></Option>
+        <Option name="admUser"></Option>
+        <Option name="altAddress"></Option>
         <Option name="bridging_fw">False</Option>
         <Option name="check_shading">True</Option>
         <Option name="clamp_mss_to_mtu">False</Option>
         <Option name="classify_mark_terminating">False</Option>
-        <Option name="cmdline"/>
-        <Option name="compiler"/>
+        <Option name="cmdline"></Option>
+        <Option name="compiler"></Option>
         <Option name="configure_interfaces">True</Option>
         <Option name="debug">False</Option>
         <Option name="drop_invalid">False</Option>
         <Option name="eliminate_duplicates">true</Option>
-        <Option name="epilog_script"/>
+        <Option name="epilog_script"></Option>
         <Option name="firewall_dir">/etc</Option>
         <Option name="firewall_is_part_of_any_and_networks">True</Option>
         <Option name="freebsd_ip_forward">1</Option>
         <Option name="ignore_empty_groups">False</Option>
         <Option name="in_out_code">true</Option>
-        <Option name="limit_suffix"/>
+        <Option name="limit_suffix"></Option>
         <Option name="limit_value">0</Option>
         <Option name="linux24_ip_forward">1</Option>
         <Option name="load_modules">True</Option>
@@ -1267,11 +1260,11 @@
         <Option name="loopback_interface">lo0</Option>
         <Option name="macosx_ip_forward">1</Option>
         <Option name="manage_virtual_addr">True</Option>
-        <Option name="mgmt_addr"/>
+        <Option name="mgmt_addr"></Option>
         <Option name="mgmt_ssh">False</Option>
         <Option name="no_ipv6_default_policy">False</Option>
         <Option name="openbsd_ip_forward">1</Option>
-        <Option name="output_file"/>
+        <Option name="output_file"></Option>
         <Option name="pass_all_out">false</Option>
         <Option name="pf_limit_frags">5000</Option>
         <Option name="pf_limit_states">10000</Option>
@@ -1291,11 +1284,11 @@
         <Option name="pix_syslog_device_id_supported">false</Option>
         <Option name="pix_use_acl_remarks">true</Option>
         <Option name="prolog_place">top</Option>
-        <Option name="prolog_script"/>
+        <Option name="prolog_script"></Option>
         <Option name="prompt1">$ </Option>
         <Option name="prompt2"> # </Option>
         <Option name="solaris_ip_forward">1</Option>
-        <Option name="sshArgs"/>
+        <Option name="sshArgs"></Option>
         <Option name="ulog_cprange">0</Option>
         <Option name="ulog_nlgroup">1</Option>
         <Option name="ulog_qthreshold">1</Option>
@@ -1352,15 +1345,15 @@
       <ServiceGroup id="id464BA3F7" name="UDP" comment="" ro="False"/>
       <ServiceGroup id="id464BA3F8" name="Custom" comment="" ro="False">
         <CustomService id="id4927X32446" name="Custom Service" comment="" ro="False" protocol="any" address_family="ipv4">
-          <CustomServiceCommand platform="fwsm"/>
-          <CustomServiceCommand platform="iosacl"/>
-          <CustomServiceCommand platform="ipf"/>
-          <CustomServiceCommand platform="ipfw"/>
-          <CustomServiceCommand platform="iptables"/>
-          <CustomServiceCommand platform="pf"/>
-          <CustomServiceCommand platform="pix"/>
-          <CustomServiceCommand platform="procurve_acl"/>
-          <CustomServiceCommand platform="unknown"/>
+          <CustomServiceCommand platform="fwsm"></CustomServiceCommand>
+          <CustomServiceCommand platform="iosacl"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+          <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
+          <CustomServiceCommand platform="iptables"></CustomServiceCommand>
+          <CustomServiceCommand platform="pf"></CustomServiceCommand>
+          <CustomServiceCommand platform="pix"></CustomServiceCommand>
+          <CustomServiceCommand platform="procurve_acl"></CustomServiceCommand>
+          <CustomServiceCommand platform="unknown"></CustomServiceCommand>
         </CustomService>
       </ServiceGroup>
     </ServiceGroup>
@@ -1415,15 +1408,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY-anti-spoofing</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1445,7 +1438,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id464BADB7" disabled="False" group="" log="True" position="2" action="Accept" direction="Both" comment="SSH Access to firewall is permitted&#10;only from internal network">
@@ -1465,15 +1458,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - LAN to fw ssh</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1495,15 +1488,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - fw to LAN DNS</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1525,15 +1518,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT-LAN ftp to fw</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1555,15 +1548,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - fw to any DNS</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1585,7 +1578,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id464BABB6" disabled="True" group="" log="True" position="7" action="Accept" direction="Both" comment="">
@@ -1606,15 +1599,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - saigon to any http</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1636,15 +1629,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - saigon to any smtp</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1666,7 +1659,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46512AE8" disabled="True" group="" log="True" position="10" action="Accept" direction="Both" comment="">
@@ -1686,15 +1679,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - fw to any dhcp</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1716,7 +1709,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id4652438A" disabled="False" group="" log="True" position="12" action="Accept" direction="Both" comment="">
@@ -1736,15 +1729,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - fw to any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1768,15 +1761,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - broadcast to lan or fw</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1798,15 +1791,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY-any to saigon</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1828,15 +1821,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT-LAN to any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1858,15 +1851,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY-any to any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -1895,50 +1888,50 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">False</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
-          <Option name="linux24_accept_redirects"/>
-          <Option name="linux24_accept_source_route"/>
-          <Option name="linux24_icmp_echo_ignore_all"/>
-          <Option name="linux24_icmp_echo_ignore_broadcasts"/>
-          <Option name="linux24_icmp_ignore_bogus_error_responses"/>
-          <Option name="linux24_ip_dynaddr"/>
+          <Option name="linux24_accept_redirects"></Option>
+          <Option name="linux24_accept_source_route"></Option>
+          <Option name="linux24_icmp_echo_ignore_all"></Option>
+          <Option name="linux24_icmp_echo_ignore_broadcasts"></Option>
+          <Option name="linux24_icmp_ignore_bogus_error_responses"></Option>
+          <Option name="linux24_ip_dynaddr"></Option>
           <Option name="linux24_ip_forward">1</Option>
-          <Option name="linux24_log_martians"/>
-          <Option name="linux24_path_ip"/>
-          <Option name="linux24_path_iptables"/>
-          <Option name="linux24_path_iptables_restore"/>
-          <Option name="linux24_path_logger"/>
-          <Option name="linux24_path_lsmod"/>
-          <Option name="linux24_path_modprobe"/>
-          <Option name="linux24_rp_filter"/>
-          <Option name="linux24_tcp_ecn"/>
-          <Option name="linux24_tcp_fack"/>
+          <Option name="linux24_log_martians"></Option>
+          <Option name="linux24_path_ip"></Option>
+          <Option name="linux24_path_iptables"></Option>
+          <Option name="linux24_path_iptables_restore"></Option>
+          <Option name="linux24_path_logger"></Option>
+          <Option name="linux24_path_lsmod"></Option>
+          <Option name="linux24_path_modprobe"></Option>
+          <Option name="linux24_rp_filter"></Option>
+          <Option name="linux24_tcp_ecn"></Option>
+          <Option name="linux24_tcp_fack"></Option>
           <Option name="linux24_tcp_fin_timeout">0</Option>
           <Option name="linux24_tcp_keepalive_interval">0</Option>
-          <Option name="linux24_tcp_sack"/>
-          <Option name="linux24_tcp_syncookies"/>
-          <Option name="linux24_tcp_timestamps"/>
-          <Option name="linux24_tcp_window_scaling"/>
+          <Option name="linux24_tcp_sack"></Option>
+          <Option name="linux24_tcp_syncookies"></Option>
+          <Option name="linux24_tcp_timestamps"></Option>
+          <Option name="linux24_tcp_window_scaling"></Option>
           <Option name="load_modules">True</Option>
           <Option name="local_nat">False</Option>
           <Option name="log_all">False</Option>
@@ -1951,10 +1944,10 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -1974,11 +1967,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -2038,7 +2031,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2059,7 +2052,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552554" disabled="False" group="" log="False" position="2" action="Accept" direction="Both" comment="SSH Access to firewall is permitted&#10;only from internal network">
@@ -2079,7 +2072,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id48E47A8319681" disabled="False" group="" log="True" position="3" action="Accept" direction="Both" comment="Forward port 80 to port 8080">
@@ -2108,16 +2101,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-80to8080</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2139,7 +2132,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552568" disabled="False" group="" log="True" position="5" action="Deny" direction="Both" comment="All other attempts to connect to&#10;the firewall are denied and logged">
@@ -2159,7 +2152,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2180,7 +2173,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id4655257C" disabled="False" group="" log="True" position="7" action="Deny" direction="Both" comment="">
@@ -2200,7 +2193,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2228,26 +2221,26 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -2262,10 +2255,10 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -2285,11 +2278,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -2349,7 +2342,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2370,7 +2363,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552EF8" disabled="False" group="" log="False" position="2" action="Accept" direction="Both" comment="SSH Access to firewall is permitted&#10;only from internal network&#10;Also firewall serves DNS for internal&#10;network">
@@ -2391,7 +2384,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552F03" disabled="False" group="" log="False" position="3" action="Accept" direction="Both" comment="DHCP requests are permitted&#10;from internal network">
@@ -2413,7 +2406,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552F0F" disabled="False" group="" log="False" position="4" action="Accept" direction="Both" comment="DHCP replies">
@@ -2433,7 +2426,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552F19" disabled="False" group="" log="True" position="5" action="Accept" direction="Both" comment="Firewall should be able to send&#10;DNS queries to the Internet">
@@ -2453,7 +2446,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552F23" disabled="False" group="" log="True" position="6" action="Deny" direction="Both" comment="All other attempts to connect to&#10;the firewall are denied and logged">
@@ -2473,7 +2466,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2494,7 +2487,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46552F37" disabled="False" group="" log="True" position="8" action="Deny" direction="Both" comment="">
@@ -2514,7 +2507,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -2542,26 +2535,26 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -2576,10 +2569,10 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -2599,11 +2592,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -2663,15 +2656,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - spoofing rule</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2693,7 +2686,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id46553949" disabled="False" group="" log="True" position="2" action="Accept" direction="Both" comment="SSH Access to firewall is permitted&#10;only from internal network">
@@ -2713,15 +2706,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - lan to jolene ssh</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2743,15 +2736,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to LAN any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2773,15 +2766,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to LAN DNS</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2803,15 +2796,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to any DNS</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2833,15 +2826,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to any ping</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2864,15 +2857,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to any http</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2894,15 +2887,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to any ftp</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2924,15 +2917,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - any to jolene</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2954,15 +2947,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - LAN to any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -2984,15 +2977,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - any to any</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3021,26 +3014,26 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -3055,10 +3048,10 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -3078,11 +3071,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -3114,7 +3107,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
@@ -3127,17 +3120,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - freethought to any ping</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3173,16 +3166,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought http</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3204,7 +3197,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -3225,7 +3218,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id4830BF9519653" disabled="False" group="" log="True" position="4" action="Deny" direction="Both" comment="">
@@ -3246,16 +3239,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -Non-LAN loopback</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -3294,25 +3287,25 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - LAN http ssh DNS ICMP</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -3340,16 +3333,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">ACCEPT -Any DNS</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -3388,16 +3381,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - freethought pop3</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3420,17 +3413,17 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="log_prefix"/>
-              <Option name="pf_classify_str"/>
+              <Option name="log_prefix"></Option>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -3469,16 +3462,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought ssh to any</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3513,16 +3506,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - port 113 to freethought</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3557,16 +3550,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought to ntp</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3597,16 +3590,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-tomcat</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3637,16 +3630,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-tomcat outside</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3670,7 +3663,7 @@
             <PolicyRuleOptions>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -3680,16 +3673,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY-cisco-router</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3714,7 +3707,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -3724,17 +3717,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-github out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3759,7 +3752,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -3769,17 +3762,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-ssh22 out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3804,7 +3797,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -3814,17 +3807,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-hostgator out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -3847,16 +3840,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -ANY 2 ANY</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -3886,27 +3879,27 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
           <Option name="classify_mark_terminating">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -3922,11 +3915,11 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="no_ipv6_default_policy">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -3946,11 +3939,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -4010,15 +4003,15 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - jolene to any ping</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4050,16 +4043,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- saigon http</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4081,7 +4074,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id48EEDFB515281" disabled="False" group="" log="True" position="3" action="Deny" direction="Both" comment="">
@@ -4102,16 +4095,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -Non-LAN loopback</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -4148,25 +4141,25 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - LAN http ssh DNS ICMP</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -4194,16 +4187,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">ACCEPT -Any DNS</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -4238,16 +4231,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- saigon ssh to any</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4278,16 +4271,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DNEY - port 113 to saigon</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4318,16 +4311,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- saigon to ntp</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4349,7 +4342,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -4379,16 +4372,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-tomcat</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4410,7 +4403,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -4440,16 +4433,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">httpredirect</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4472,16 +4465,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -ANY 2 ANY</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -4511,27 +4504,27 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
           <Option name="classify_mark_terminating">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -4547,11 +4540,11 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="no_ipv6_default_policy">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -4571,11 +4564,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -4608,7 +4601,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id5344X1918" disabled="False" group="" log="False" position="1" action="Accept" direction="Both" comment="">
@@ -4628,7 +4621,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id5356X1918" disabled="False" group="" log="False" position="2" action="Accept" direction="Both" comment="SSH Access to the host; useful ICMP&#10;types; ping request">
@@ -4650,7 +4643,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id5370X1918" disabled="False" group="" log="False" position="3" action="Accept" direction="Both" comment="">
@@ -4670,7 +4663,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id5382X1918" disabled="False" group="" log="True" position="4" action="Deny" direction="Both" comment="">
@@ -4690,7 +4683,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <RuleSetOptions/>
@@ -4759,7 +4752,7 @@
           <Option name="verify_interfaces">true</Option>
         </FirewallOptions>
       </Firewall>
-      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1385596660" lastInstalled="0" lastModified="1335929959" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
+      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1320756531" lastInstalled="0" lastModified="1335929959" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
         <NAT id="id13320X18474" name="NAT" comment="" ro="False" ipv4_rule_set="False" ipv6_rule_set="False" top_rule_set="True">
           <RuleSetOptions/>
         </NAT>
@@ -4784,7 +4777,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -4794,15 +4787,15 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - anti-spoof</Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
@@ -4847,7 +4840,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -4857,15 +4850,15 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ALLW - ssh out</Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
@@ -4919,16 +4912,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought ssh to any</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -4965,25 +4958,25 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - LAN http ssh DNS ICMP</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5014,7 +5007,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5024,15 +5017,15 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - NOT MINE</Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
@@ -5058,7 +5051,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5068,15 +5061,15 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - ANY</Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
@@ -5102,19 +5095,19 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
           <Option name="add_mgmt_ssh_rule_when_stoped">False</Option>
           <Option name="add_rules_for_ipv6_neighbor_discovery">False</Option>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
           <Option name="classify_mark_terminating">False</Option>
           <Option name="clear_unknown_interfaces">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_bonding_interfaces">False</Option>
           <Option name="configure_bridge_interfaces">False</Option>
           <Option name="configure_interfaces">True</Option>
@@ -5122,13 +5115,13 @@
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="ipv4_6_order">ipv4_first</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -5143,10 +5136,10 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pix_add_clear_statements">true</Option>
           <Option name="pix_assume_fw_part_of_any">true</Option>
           <Option name="pix_default_logint">300</Option>
@@ -5160,11 +5153,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
-          <Option name="scpArgs"/>
-          <Option name="script_name_on_firewall"/>
+          <Option name="prolog_script"></Option>
+          <Option name="scpArgs"></Option>
+          <Option name="script_name_on_firewall"></Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>
@@ -5197,7 +5190,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="action_on_reject"/>
+              <Option name="action_on_reject"></Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
               <Option name="firewall_is_part_of_any_and_networks">False</Option>
@@ -5210,17 +5203,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCEPT - freethought to any ping</Option>
-              <Option name="pf_classify_str"/>
-              <Option name="rule_name_accounting"/>
+              <Option name="pf_classify_str"></Option>
+              <Option name="rule_name_accounting"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5256,16 +5249,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought http</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5287,7 +5280,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
             </PolicyRuleOptions>
           </PolicyRule>
@@ -5308,7 +5301,7 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
             </PolicyRuleOptions>
           </PolicyRule>
           <PolicyRule id="id13705X18474" disabled="False" group="" log="True" position="4" action="Deny" direction="Both" comment="">
@@ -5329,16 +5322,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -Non-LAN loopback</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5377,25 +5370,25 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - LAN http ssh DNS ICMP</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5423,16 +5416,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">ACCEPT -Any DNS</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5471,16 +5464,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT - freethought pop3</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5503,17 +5496,17 @@
               <IntervalRef ref="sysid2"/>
             </When>
             <PolicyRuleOptions>
-              <Option name="log_prefix"/>
-              <Option name="pf_classify_str"/>
+              <Option name="log_prefix"></Option>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5552,16 +5545,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought ssh to any</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5596,16 +5589,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY - port 113 to freethought</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5640,16 +5633,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT- freethought to ntp</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5680,16 +5673,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-tomcat</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5720,16 +5713,16 @@
               <Option name="hashlimit_gcinterval">0</Option>
               <Option name="hashlimit_max">0</Option>
               <Option name="hashlimit_mode">dstip</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-tomcat outside</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5753,7 +5746,7 @@
             <PolicyRuleOptions>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5763,16 +5756,16 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">DENY-cisco-router</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">True</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5797,7 +5790,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5807,17 +5800,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-github out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5842,7 +5835,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5852,17 +5845,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-ssh22 out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5887,7 +5880,7 @@
               <Option name="connlimit_above_not">False</Option>
               <Option name="connlimit_masklen">0</Option>
               <Option name="connlimit_value">0</Option>
-              <Option name="firewall_is_part_of_any_and_networks"/>
+              <Option name="firewall_is_part_of_any_and_networks"></Option>
               <Option name="hashlimit_burst">0</Option>
               <Option name="hashlimit_dstlimit">False</Option>
               <Option name="hashlimit_expire">0</Option>
@@ -5897,17 +5890,17 @@
               <Option name="hashlimit_mode_dstport">False</Option>
               <Option name="hashlimit_mode_srcip">False</Option>
               <Option name="hashlimit_mode_srcport">False</Option>
-              <Option name="hashlimit_name"/>
+              <Option name="hashlimit_name"></Option>
               <Option name="hashlimit_size">0</Option>
-              <Option name="hashlimit_suffix"/>
+              <Option name="hashlimit_suffix"></Option>
               <Option name="hashlimit_value">0</Option>
               <Option name="limit_burst">0</Option>
-              <Option name="limit_suffix"/>
+              <Option name="limit_suffix"></Option>
               <Option name="limit_value">0</Option>
               <Option name="limit_value_not">False</Option>
-              <Option name="log_level"/>
+              <Option name="log_level"></Option>
               <Option name="log_prefix">ACCPT-hostgator out</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="stateless">False</Option>
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
@@ -5930,16 +5923,16 @@
             </When>
             <PolicyRuleOptions>
               <Option name="log_prefix">DENY -ANY 2 ANY</Option>
-              <Option name="pf_classify_str"/>
+              <Option name="pf_classify_str"></Option>
               <Option name="pf_keep_state">False</Option>
               <Option name="pf_max_src_conn">0</Option>
               <Option name="pf_max_src_conn_flush">False</Option>
               <Option name="pf_max_src_conn_global">False</Option>
-              <Option name="pf_max_src_conn_overload_table"/>
+              <Option name="pf_max_src_conn_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_flush">False</Option>
               <Option name="pf_max_src_conn_rate_global">False</Option>
               <Option name="pf_max_src_conn_rate_num">0</Option>
-              <Option name="pf_max_src_conn_rate_overload_table"/>
+              <Option name="pf_max_src_conn_rate_overload_table"></Option>
               <Option name="pf_max_src_conn_rate_seconds">0</Option>
               <Option name="pf_max_src_nodes">0</Option>
               <Option name="pf_max_src_states">0</Option>
@@ -5969,27 +5962,27 @@
         <FirewallOptions>
           <Option name="accept_established">True</Option>
           <Option name="accept_new_tcp_with_no_syn">True</Option>
-          <Option name="action_on_reject"/>
-          <Option name="activationCmd"/>
-          <Option name="admUser"/>
-          <Option name="altAddress"/>
+          <Option name="action_on_reject"></Option>
+          <Option name="activationCmd"></Option>
+          <Option name="admUser"></Option>
+          <Option name="altAddress"></Option>
           <Option name="bridging_fw">False</Option>
           <Option name="check_shading">True</Option>
           <Option name="clamp_mss_to_mtu">False</Option>
           <Option name="classify_mark_terminating">False</Option>
-          <Option name="cmdline"/>
-          <Option name="compiler"/>
+          <Option name="cmdline"></Option>
+          <Option name="compiler"></Option>
           <Option name="configure_interfaces">True</Option>
           <Option name="debug">False</Option>
           <Option name="drop_invalid">False</Option>
           <Option name="eliminate_duplicates">true</Option>
-          <Option name="epilog_script"/>
+          <Option name="epilog_script"></Option>
           <Option name="firewall_dir">/etc</Option>
           <Option name="firewall_is_part_of_any_and_networks">True</Option>
           <Option name="freebsd_ip_forward">1</Option>
           <Option name="ignore_empty_groups">False</Option>
           <Option name="in_out_code">true</Option>
-          <Option name="limit_suffix"/>
+          <Option name="limit_suffix"></Option>
           <Option name="limit_value">0</Option>
           <Option name="linux24_ip_forward">1</Option>
           <Option name="load_modules">True</Option>
@@ -6005,11 +5998,11 @@
           <Option name="loopback_interface">lo0</Option>
           <Option name="macosx_ip_forward">1</Option>
           <Option name="manage_virtual_addr">True</Option>
-          <Option name="mgmt_addr"/>
+          <Option name="mgmt_addr"></Option>
           <Option name="mgmt_ssh">False</Option>
           <Option name="no_ipv6_default_policy">False</Option>
           <Option name="openbsd_ip_forward">1</Option>
-          <Option name="output_file"/>
+          <Option name="output_file"></Option>
           <Option name="pass_all_out">false</Option>
           <Option name="pf_limit_frags">5000</Option>
           <Option name="pf_limit_states">10000</Option>
@@ -6029,11 +6022,11 @@
           <Option name="pix_syslog_device_id_supported">false</Option>
           <Option name="pix_use_acl_remarks">true</Option>
           <Option name="prolog_place">top</Option>
-          <Option name="prolog_script"/>
+          <Option name="prolog_script"></Option>
           <Option name="prompt1">$ </Option>
           <Option name="prompt2"> # </Option>
           <Option name="solaris_ip_forward">1</Option>
-          <Option name="sshArgs"/>
+          <Option name="sshArgs"></Option>
           <Option name="ulog_cprange">0</Option>
           <Option name="ulog_nlgroup">1</Option>
           <Option name="ulog_qthreshold">1</Option>

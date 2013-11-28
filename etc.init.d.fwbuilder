@@ -1,0 +1,55 @@
+#! /bin/bash
+
+# to put into all runlevels on Debian:
+# update-rc.d fwbuilder start 45 0 1 2 3 4 5 6 S .
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+NAME=fwbuilder
+
+#test -x /etc/rc.firewall || exit 0
+
+if [ ! -f /etc/fwbuilder.sh ]; then
+  echo "Unable to start fwbuilder firewall - /etc/fwbuilder.sh does not exist"
+  exit 0
+fi
+
+set -e
+
+case "$1" in
+  start|restart|reload|force-reload)
+  echo -n "Setting up fwbuilder firewall..."
+  /bin/bash /etc/fwbuilder.sh
+  echo "done."
+  ;;
+  stop)
+        if [ -x /sbin/iptables ]; then
+            echo -n "Stopping iptables firewall..."
+            iptables -P OUTPUT ACCEPT
+            iptables -P INPUT ACCEPT
+            iptables -P FORWARD ACCEPT
+            iptables -F
+            iptables -X
+            echo "done."
+            exit 0;
+        fi
+        if [ -x /sbin/ipchains ]; then
+            echo -n "Stopping ipchains firewall..."
+            ipchains -P output ACCEPT
+            ipchains -P input ACCEPT
+            ipchains -P forward ACCEPT
+            ipchains -F
+            ipchains -X
+            echo "done."
+            exit 0;
+        fi
+        echo "Cannot find /sbin/ipchains or /sbin/iptables"
+        exit 1
+        ;;
+  *)
+  N=/etc/init.d/$NAME
+  echo "Usage: $N {start|restart|reload|force-reload}" >&2
+  exit 1
+  ;;
+esac
+
+exit 0
