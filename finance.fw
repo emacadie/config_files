@@ -4,7 +4,7 @@
 #
 #  Firewall Builder  fwb_ipt v5.1.0.3599
 #
-#  Generated Wed Nov 27 17:57:40 2013 CST by ericm
+#  Generated Sat Mar 29 11:11:55 2014 CDT by ericm
 #
 # files: * finance.fw /etc/finance.fw
 #
@@ -429,11 +429,21 @@ script_body() {
     echo "Rule 7 (global)"
     # 
     $IPTABLES -N RULE_7
-    $IPTABLES -A OUTPUT  -m state --state NEW  -j RULE_7
-    $IPTABLES -A INPUT  -m state --state NEW  -j RULE_7
-    $IPTABLES -A FORWARD  -m state --state NEW  -j RULE_7
-    $IPTABLES -A RULE_7  -j ULOG  --ulog-nlgroup 1 --ulog-prefix "DENY - ANY" --ulog-qthreshold 1
+    $IPTABLES -A INPUT -p tcp -m tcp  -s 74.220.219.72   --dport 80  -j RULE_7
+    $IPTABLES -A FORWARD -p tcp -m tcp  -s 74.220.219.72   --dport 80  -j RULE_7
+    $IPTABLES -A RULE_7  -j ULOG  --ulog-nlgroup 1 --ulog-prefix "RULE 7 -- DENY " --ulog-qthreshold 1
     $IPTABLES -A RULE_7  -j DROP
+    # 
+    # Rule 8 (global)
+    # 
+    echo "Rule 8 (global)"
+    # 
+    $IPTABLES -N RULE_8
+    $IPTABLES -A OUTPUT  -m state --state NEW  -j RULE_8
+    $IPTABLES -A INPUT  -m state --state NEW  -j RULE_8
+    $IPTABLES -A FORWARD  -m state --state NEW  -j RULE_8
+    $IPTABLES -A RULE_8  -j ULOG  --ulog-nlgroup 1 --ulog-prefix "DENY - ANY" --ulog-qthreshold 1
+    $IPTABLES -A RULE_8  -j DROP
 }
 
 ip_forward() {
@@ -489,7 +499,7 @@ test -z "$cmd" && {
 
 case "$cmd" in
     start)
-        log "Activating firewall script generated Wed Nov 27 17:57:40 2013 by ericm"
+        log "Activating firewall script generated Sat Mar 29 11:11:55 2014 by ericm"
         check_tools
          prolog_commands 
         check_run_time_address_table_files

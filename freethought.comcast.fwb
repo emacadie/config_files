@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE FWObjectDatabase SYSTEM "fwbuilder.dtd">
-<FWObjectDatabase xmlns="http://www.fwbuilder.org/1.0/" version="22" lastModified="1320211200" id="root">
+<FWObjectDatabase xmlns="http://www.fwbuilder.org/1.0/" version="22" lastModified="1396109235" id="root">
   <Library id="syslib000" color="#d4f8ff" name="Standard" comment="Standard objects" ro="True">
     <AnyNetwork id="sysid0" name="Any" comment="Any Network" ro="False" address="0.0.0.0" netmask="0.0.0.0"/>
     <AnyIPService id="sysid1" protocol_num="0" name="Any" comment="Any IP Service" ro="False"/>
@@ -1310,7 +1310,9 @@
   <Library id="id464BA3EB" color="#d2ffd0" name="User" comment="" ro="False">
     <ObjectGroup id="id464BA3EC_clusters" name="Clusters" comment="" ro="False"/>
     <ObjectGroup id="id464BA3EC" name="Objects" comment="" ro="False">
-      <ObjectGroup id="id464BA3EC_og_ats_1" name="Address Tables" comment="" ro="False"/>
+      <ObjectGroup id="id464BA3EC_og_ats_1" name="Address Tables" comment="" ro="False">
+        <AddressTable id="id8689X684" filename="/home/ericm/github/config_files/address_table" run_time="False" name="Address Table" comment="" ro="False"/>
+      </ObjectGroup>
       <ObjectGroup id="id464BA3EC_og_dnsn_1" name="DNS Names" comment="" ro="False"/>
       <ObjectGroup id="id464BA3ED" name="Addresses" comment="" ro="False"/>
       <ObjectGroup id="id464BA3EE" name="Groups" comment="" ro="False"/>
@@ -4759,7 +4761,7 @@
           <Option name="verify_interfaces">true</Option>
         </FirewallOptions>
       </Firewall>
-      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1385596660" lastInstalled="0" lastModified="1335929959" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
+      <Firewall id="id13302X18474" host_OS="linux24" lastCompiled="1396109515" lastInstalled="0" lastModified="1396109500" platform="iptables" version="" name="finance" comment="This is an example of a firewall protecting a host ( a server or a workstation). Only SSH access to the host is permitted. Host has dynamic address." ro="False">
         <NAT id="id13320X18474" name="NAT" comment="" ro="False" ipv4_rule_set="False" ipv6_rule_set="False" top_rule_set="True">
           <RuleSetOptions/>
         </NAT>
@@ -5038,7 +5040,27 @@
               <Option name="ulog_nlgroup">1</Option>
             </PolicyRuleOptions>
           </PolicyRule>
-          <PolicyRule id="id13439X18474" disabled="False" group="" log="True" position="7" action="Deny" direction="Both" comment="">
+          <PolicyRule id="id8704X684" disabled="False" group="" log="True" position="7" action="Deny" direction="Both" comment="">
+            <Src neg="False">
+              <ObjectRef ref="id8689X684"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="sysid0"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="tcp-HTTP"/>
+            </Srv>
+            <Itf neg="False">
+              <ObjectRef ref="sysid0"/>
+            </Itf>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions>
+              <Option name="stateless">True</Option>
+            </PolicyRuleOptions>
+          </PolicyRule>
+          <PolicyRule id="id13439X18474" disabled="False" group="" log="True" position="8" action="Deny" direction="Both" comment="">
             <Src neg="False">
               <ObjectRef ref="sysid0"/>
             </Src>
