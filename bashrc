@@ -115,25 +115,27 @@ alias showTimeVar='echo `date +%Y-%m-%d_%H.%M.%S`'
 alias sup='su --preserve-environment'
 alias findBackup='find . -name "*~"'
 alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
-alias psFire='ps -deaf | grep fire'
+alias psFire='ps -deaf | grep fire; echo `date +%Y-%m-%d_%H.%M.%S`'
 alias vgrep='grep -v'
 alias igrep='grep -i'
 alias mkdirpv='mkdir --parents --verbose'
+alias testDisk='dmesg | cat >> dmesg.test.txt'
 
 # Go
 # Should this be GOROOT or  GOPATH
-export GOROOT=$HOME/tmp/go-lang/go
-# export GOPATH=$HOME/tmp/go-lang/go
-export PATH=$PATH:$GOROOT/bin
+export GOROOT=$HOME/go
+export GOPATH=/home/ericm/work/gopath
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #- Java
 export JAVA_HOME=/usr/local/java/jdk1.7.0
 export JDK_HOME=/usr/local/java/jdk1.7.0
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
-alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
-alias ant=/home/ericm/tmp/Java/apache/apache-ant-1.8.2/bin/ant
+# alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
+export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.4
+export MAVEN_HOME=/home/ericm/jarFiles/apache-maven-3.0.5
 #- export PATH=$JAVA_HOME/bin:$PATH
-PATH=/home/ericm/jarFiles/apache-maven-3.0.5/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+PATH=$MAVEN_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
 #- for git
 export EDITOR=nano
 
@@ -147,3 +149,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
+
