@@ -129,8 +129,8 @@ export GOPATH=/home/ericm/work/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #- Java
-export JAVA_HOME=/usr/local/java/jdk1.7.0
-export JDK_HOME=/usr/local/java/jdk1.7.0
+export JAVA_HOME=/usr/local/java/jdk1.7.0_71
+export JDK_HOME=/usr/local/java/jdk1.7.0_71
 # jdk1.8.0_05
 # export JAVA_HOME=/usr/local/java/jdk1.8.0_05
 # export JDK_HOME=/usr/local/java/jdk1.8.0_05

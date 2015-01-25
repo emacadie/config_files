@@ -132,8 +132,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # export JAVA_HOME=/usr/local/java/jdk1.7.0
 # export JDK_HOME=/usr/local/java/jdk1.7.0
 # jdk1.8.0_05
-export JAVA_HOME=/usr/local/java/jdk1.8.0_05
-export JDK_HOME=/usr/local/java/jdk1.8.0_05
+export JAVA_HOME=/usr/local/java/jdk1.8.0_25
+export JDK_HOME=/usr/local/java/jdk1.8.0_25
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
 export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.4
