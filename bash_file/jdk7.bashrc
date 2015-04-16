@@ -143,6 +143,8 @@ PATH=$MAVEN_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:
 #- for git
 export EDITOR=nano
 
+alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
+
 # This is a good place to source rvm v v v
   [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"  # This loads RVM into a shell session.
 
