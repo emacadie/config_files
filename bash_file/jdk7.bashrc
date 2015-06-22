@@ -136,10 +136,10 @@ export JDK_HOME=/usr/local/java/jdk1.7.0_71
 # export JDK_HOME=/usr/local/java/jdk1.8.0_05
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
-export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.4
-export MAVEN_HOME=/home/ericm/jarFiles/apache-maven-3.0.5
+# export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.4
+export MAVEN_HOME=/home/ericm/jarFiles/apache-maven-3.2.3
 #- export PATH=$JAVA_HOME/bin:$PATH
-PATH=$MAVEN_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
 #- for git
 export EDITOR=nano
 
