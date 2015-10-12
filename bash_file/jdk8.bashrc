@@ -154,5 +154,5 @@ alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
-
+# [[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
+[[ -s "/home/ericm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ericm/.sdkman/bin/sdkman-init.sh"

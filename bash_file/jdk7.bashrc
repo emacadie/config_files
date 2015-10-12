@@ -122,6 +122,11 @@ alias mkdirpv='mkdir --parents --verbose'
 alias testDisk='dmesg | cat >> dmesg.test.txt'
 alias launch-nm-applet='dbus-launch nm-applet &'
 
+# Thunderbird
+export NSPR_LOG_MODULES=pop3:5,smtp:3,timestamp
+export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
+export GECKO_SEPARATE_NSPR_LOGS=1
+
 # Go
 # Should this be GOROOT or  GOPATH
 export GOROOT=$HOME/go
@@ -154,5 +159,6 @@ alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
+# [[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
+[[ -s "/home/ericm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
 
