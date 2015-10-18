@@ -124,9 +124,14 @@ alias launch-nm-applet='dbus-launch nm-applet &'
 
 # Go
 # Should this be GOROOT or  GOPATH
-export GOROOT=$HOME/go
-export GOPATH=/home/ericm/work/gopath
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# export GOROOT=$HOME/go
+# export GOPATH=/home/ericm/work/gopath
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Thunderbird
+export NSPR_LOG_MODULES=pop3:5,smtp:5,timestamp
+export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
+export GECKO_SEPARATE_NSPR_LOGS=1
 
 #- Java
 # export JAVA_HOME=/usr/local/java/jdk1.7.0

@@ -123,7 +123,7 @@ alias testDisk='dmesg | cat >> dmesg.test.txt'
 alias launch-nm-applet='dbus-launch nm-applet &'
 
 # Thunderbird
-export NSPR_LOG_MODULES=pop3:5,smtp:3,timestamp
+export NSPR_LOG_MODULES=pop3:5,smtp:5,timestamp
 export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
 export GECKO_SEPARATE_NSPR_LOGS=1
 
