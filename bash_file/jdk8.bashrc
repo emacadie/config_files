@@ -144,7 +144,9 @@ CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.4
 export MAVEN_HOME=/home/ericm/jarFiles/apache-maven-3.2.3
 #- export PATH=$JAVA_HOME/bin:$PATH
-PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$PATH
+RACKET_HOME=$HOME/racket/bin
+PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$RACKET_HOME:$PATH
+
 #- for git
 export EDITOR=nano
 alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
@@ -158,6 +160,7 @@ alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
 #- EOF
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+#THIS MUST BE AT THE END OF THE FILE FOR SDK TO WORK!!!
 # [[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
+#  export SDKMAN_DIR="/home/ericm/.sdkman" && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
 [[ -s "/home/ericm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
