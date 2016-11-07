@@ -107,7 +107,6 @@ fi
 # EKM aliases
 alias ls='ls -F --color=never'
 alias emacsnw='emacs -nw'
-alias emascnw='emacs -nw'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
 alias nanoc='nano --const'
 alias setTimeVar='TIME_VAR=`date +%Y-%m-%d_%H.%M.%S`'
@@ -121,6 +120,8 @@ alias igrep='grep -i'
 alias mkdirpv='mkdir --parents --verbose'
 alias testDisk='dmesg | cat >> dmesg.test.txt'
 alias launch-nm-applet='dbus-launch nm-applet &'
+alias phistory='history | cut -c 8-'
+alias randpw='< /dev/urandom tr -dc _A-Z-a-z-0-9\+- | head -c${1:-16};echo;'
 
 # Go
 # Should this be GOROOT or  GOPATH

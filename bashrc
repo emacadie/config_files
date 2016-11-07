@@ -106,7 +106,6 @@ fi
 
 # EKM aliases
 alias ls='ls -F --color=never'
-alias emacsnw='emacs -nw'
 alias emascnw='emacs -nw'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
 alias nanoc='nano --const'
