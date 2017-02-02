@@ -105,23 +105,24 @@ fi
 # fi
 
 # EKM aliases
-alias ls='ls -F --color=never'
+alias easygit='setTimeVar ; git add .; git commit -m "$TIME_VAR"'
 alias emacsnw='emacs -nw'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
+alias findBackup='find . -name "*~"'
+alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
+alias igrep='grep -i'
+alias launch-nm-applet='dbus-launch nm-applet &'
+alias ls='ls -F --color=never'
+alias mkdirpv='mkdir --parents --verbose'
 alias nanoc='nano --const'
+alias phistory='history | cut -c 8-'
+alias psFire='ps -deaf | grep fire; echo `date +%Y-%m-%d_%H.%M.%S`'
+alias randpw='< /dev/urandom tr -dc _A-Z-a-z-0-9\+- | head -c${1:-20};echo;'
 alias setTimeVar='TIME_VAR=`date +%Y-%m-%d_%H.%M.%S`'
 alias showTimeVar='echo `date +%Y-%m-%d_%H.%M.%S`'
 alias sup='su --preserve-environment'
-alias findBackup='find . -name "*~"'
-alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
-alias psFire='ps -deaf | grep fire; echo `date +%Y-%m-%d_%H.%M.%S`'
-alias vgrep='grep -v'
-alias igrep='grep -i'
-alias mkdirpv='mkdir --parents --verbose'
 alias testDisk='dmesg | cat >> dmesg.test.txt'
-alias launch-nm-applet='dbus-launch nm-applet &'
-alias phistory='history | cut -c 8-'
-alias randpw='< /dev/urandom tr -dc _A-Z-a-z-0-9\+- | head -c${1:-16};echo;'
+alias vgrep='grep -v'
 
 # Go
 # Should this be GOROOT or  GOPATH
@@ -162,6 +163,5 @@ alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDK TO WORK!!!
-# [[ -s "/home/ericm/.gvm/bin/gvm-init.sh" ]] && source "/home/ericm/.gvm/bin/gvm-init.sh"
 #  export SDKMAN_DIR="/home/ericm/.sdkman" && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
 [[ -s "/home/ericm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
