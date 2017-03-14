@@ -153,9 +153,15 @@ PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$RACKET_HOME:$
 export EDITOR=nano
 alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
 
+export BOOT_CLOJURE_VERSION=1.8.0
 
 # This is a good place to source rvm v v v
   [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#- EOF
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export GEM_AUTHORITY_PATH=/home/ericm/tmp/ruby.events/gems
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
