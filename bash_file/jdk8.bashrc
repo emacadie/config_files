@@ -114,10 +114,12 @@ alias igrep='grep -i'
 alias launch-nm-applet='dbus-launch nm-applet &'
 alias ls='ls -F --color=never'
 alias mkdirpv='mkdir --parents --verbose'
+alias mvv='mv -v'
 alias nanoc='nano --const'
 alias phistory='history | cut -c 8-'
 alias psFire='ps -deaf | grep fire; echo `date +%Y-%m-%d_%H.%M.%S`'
 alias randpw='< /dev/urandom tr -dc _A-Z-a-z-0-9\+- | head -c${1:-20};echo;'
+alias runKawa='/home/ericm/jar.files/kawa-2.3/bin/kawa'
 alias setTimeVar='TIME_VAR=`date +%Y-%m-%d_%H.%M.%S`'
 alias showTimeVar='echo `date +%Y-%m-%d_%H.%M.%S`'
 alias sup='su --preserve-environment'
@@ -139,8 +141,8 @@ export GECKO_SEPARATE_NSPR_LOGS=1
 # export JAVA_HOME=/usr/local/java/jdk1.7.0
 # export JDK_HOME=/usr/local/java/jdk1.7.0
 # jdk1.8.0_05
-export JAVA_HOME=/usr/local/java/jdk1.8.0_25
-export JDK_HOME=/usr/local/java/jdk1.8.0_25
+export JAVA_HOME=/usr/local/java/jdk1.8.0_121
+export JDK_HOME=/usr/local/java/jdk1.8.0_121
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
 export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.6
@@ -151,8 +153,7 @@ PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$RACKET_HOME:$
 
 #- for git
 export EDITOR=nano
-alias jedit='java -jar /home/ericm/jarFiles/jEdit/5.1.0/jedit.jar'
-
+alias jedit='java -jar /home/ericm/jar.files/jEdit/5.4.0/jedit.jar'
 export BOOT_CLOJURE_VERSION=1.8.0
 
 # This is a good place to source rvm v v v
