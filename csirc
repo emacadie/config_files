@@ -1,0 +1,4 @@
+;; config file for Chicken Scheme interpreter
+(use linenoise)
+(current-input-port (make-linenoise-port))
+(require-extension r7rs)
