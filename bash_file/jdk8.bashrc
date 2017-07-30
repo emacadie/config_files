@@ -105,6 +105,7 @@ fi
 # fi
 
 # EKM aliases
+alias dfh='df -h; showTimeVar'
 alias easygit='setTimeVar ; git add .; git commit -m "$TIME_VAR"'
 alias emacsnw='emacs -nw'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
