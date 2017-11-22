@@ -142,8 +142,8 @@ export GECKO_SEPARATE_NSPR_LOGS=1
 # export JAVA_HOME=/usr/local/java/jdk1.7.0
 # export JDK_HOME=/usr/local/java/jdk1.7.0
 # jdk1.8.0_05
-export JAVA_HOME=/usr/local/java/jdk1.8.0_121
-export JDK_HOME=/usr/local/java/jdk1.8.0_121
+export JAVA_HOME=/usr/lib/jvm/java-9-openjdk-amd64
+export JDK_HOME=/usr/lib/jvm/java-9-openjdk-amd64
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
 export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.6
