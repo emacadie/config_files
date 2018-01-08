@@ -1,0 +1,48 @@
+#!/sbin/nft -f
+# A simple firewall
+# based on https://wiki.archlinux.org/index.php/nftables
+flush ruleset
+
+table inet filter {
+	chain input {
+		type filter hook input priority 0; policy drop;
+
+		# established/related connections
+		ct state established,related accept
+
+		# invalid connections
+		ct state invalid drop
+		
+		# loopback interface
+		iif lo accept
+
+		# ICMP
+		# routers may also want: mld-listener-query, nd-router-solicit
+		# ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
+        ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
+		# ip protocol icmp icmp type { destination-unreachable, router-advertisement, time-exceeded, parameter-problem } accept
+        ip protocol icmp icmp type { destination-unreachable, time-exceeded, parameter-problem } accept
+
+		# SSH (port 22)
+		# tcp dport ssh accept
+		# avoid brute force on ssh:
+		tcp dport 30000 limit rate 15/minute log prefix "New SSH connection: " group 0 accept
+        
+        # mail
+        tcp dport 25 limit rate 15/minute log prefix "New mail connection: " group 0 accept
+
+		# HTTP (ports 80 & 443)
+		tcp dport { http, https } log prefix "New http connection: " group 0 accept
+		# count and drop any other traffic
+        counter log prefix "Dropping something" group 0 drop
+	}
+
+	chain forward {
+		type filter hook forward priority 0; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority 0; policy accept;
+	}
+
+}
