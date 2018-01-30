@@ -139,11 +139,9 @@ export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
 export GECKO_SEPARATE_NSPR_LOGS=1
 
 #- Java
-# export JAVA_HOME=/usr/local/java/jdk1.7.0
-# export JDK_HOME=/usr/local/java/jdk1.7.0
-# jdk1.8.0_05
-export JAVA_HOME=/usr/local/java/jdk-9
-export JDK_HOME=/usr/local/java/jdk-9
+# jdk1.8.0_05, jdk-9 or jdk-9.0.1
+export JAVA_HOME=/usr/local/java/jdk-9.0.1
+export JDK_HOME=/usr/local/java/jdk-9.0.1
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 # alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
 export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.6
@@ -170,5 +168,5 @@ export BOOT_CLOJURE_VERSION=1.8.0
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDK TO WORK!!!
-#  export SDKMAN_DIR="/home/ericm/.sdkman" && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/ericm/.sdkman" && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
 [[ -s "/home/ericm/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
