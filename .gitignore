@@ -29,3 +29,6 @@ rspec.output
 
 # Ignore the backup files
 *~
+
+.nrepl-history
+#- EOF
