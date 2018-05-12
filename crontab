@@ -14,7 +14,31 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 #
 
+#
+#- every day at 3:15 AM
+15 3 * * * root /etc/init.d/sliceScript.sh
+15 3 * * * root /root/scripts/video.sh
+#- Every other day at 11 PM
+# 0 23 */2 * * root /root/ulogFiles/moveFirewallLogs.sh
+
+#- every hour at X:25 
+# 25 * * * * ericm /home/ericm/scripts/schoolhouse/pingSchoolhouse.sh
+#- Every day at 3:25 PM
+# 25 15 * * * ericm /home/ericm/scripts/schoolhouse/pingSchoolhouse.sh
 #- every 5 minutes
-*/5 * * * * root /root/scripts/setNameHosts.sh
+# */5 * * * * ericm /home/ericm/scripts/schoolhouse/pingSchoolhouse.sh
+
+#- every day at 3:30 AM
+30 3 * * * ericm /home/ericm/scripts/video.sh
+
+#- every day at 3:45 AM
+45 3 * * * root /root/scripts/lets.encrypt.script.sh
+
+#- every hour at :29
+# 29 *	* * *	root    /root/scripts/checkJames.sh
+
+# every 5 minutes
+*/5 * * * * root /root/scripts/checkJames.sh
+# */5 * * * * root /root/scripts/check.groovy.mail.sh
 
 #- EOF
