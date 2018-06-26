@@ -9,6 +9,6 @@
         :dependencies [[org.clojure/tools.nrepl "0.2.12"]
                        [org.clojure/tools.namespace "0.2.11"]
                        ]
-        :repl-options { :init-ns user }
-        :source-paths ["~/.lein/src"]}}
+        ; :repl-options { :init-ns user }
+        :resource-paths ["~/.lein/src"]}}
 
