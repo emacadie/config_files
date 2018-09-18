@@ -9,7 +9,9 @@
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;;(add-to-list 'package-archives          
+;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -142,6 +144,9 @@
 (load "setup-js.el")
 ;; tabs?
 (setq-default indent-tabs-mode nil)
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
+                          64 68 72 76 80 84 88 92 96 100 104 108 112
+                          116 120))
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 ; (setq indent-line-function 'insert-tab)
@@ -149,21 +154,6 @@
 ;; (setq tab-width 4) ; or any other preferred value
 ;;    (defvaralias 'c-basic-offset 'tab-width)
 ;;     (defvaralias 'cperl-indent-level 'tab-width)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; from https://www.emacswiki.org/emacs/ToggleWindowSplit
 ;; go back and forth from splitting emacs windows vertically and horizontally
@@ -193,5 +183,22 @@
 	  (if this-win-2nd (other-window 1))))))
 
 ; (define-key ctl-x-4-map "t" 'toggle-window-split)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
 
 
