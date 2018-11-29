@@ -1,0 +1,5 @@
+;; .guile file
+;; these two lines will allow use of arrow keys in REPL
+;; cp dot.guile $HOME/.guile
+(use-modules (ice-9 readline))
+(activate-readline)
