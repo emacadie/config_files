@@ -10,6 +10,10 @@
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/")
+             t)
+
 ;;(add-to-list 'package-archives          
 ;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
@@ -56,6 +60,8 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    racket-mode
+    
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -113,6 +119,13 @@
 ;;;;
 ;; Scheme, use csi
 (setq scheme-program-name "csi -:c")
+
+;; use Guile
+;; (setq scheme-program-name "guile")
+
+;; Racket
+(setq racket-program "racket")
+
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
@@ -191,7 +204,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
+    (faceup s racket-mode dirtrack-buffer-name-track-mode gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
+;; commenting out stuff I might not use
+;; geiser
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
