@@ -69,8 +69,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    # alias dir='dir --color=auto'
+    # alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -105,7 +105,7 @@ fi
 # fi
 
 # EKM aliases
-alias dfh='df -h; showTimeVar'
+alias dfh='df -h | grep -v '/snap'; showTimeVar'
 alias easygit='findRMBackup; setTimeVar ; git add .; git commit -m "$TIME_VAR"'
 alias emacsnw='emacs -nw'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
@@ -128,48 +128,22 @@ alias sup='su --preserve-environment'
 alias testDisk='dmesg | cat >> dmesg.test.txt'
 alias vgrep='grep -v'
 
-# Go
-# Should this be GOROOT or  GOPATH
-# export GOROOT=$HOME/go
-# export GOPATH=/home/ericm/work/gopath
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Thunderbird
-export NSPR_LOG_MODULES=pop3:5,smtp:5,timestamp
-export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
-export GECKO_SEPARATE_NSPR_LOGS=1
+# export NSPR_LOG_MODULES=pop3:5,smtp:5,timestamp
+# export NSPR_LOG_FILE=/home/ericm/github/groovy_email/log/thunderbird.log
+# export GECKO_SEPARATE_NSPR_LOGS=1
 
 #- Java
-# jdk1.8.0_05, jdk-9 or jdk-9.0.1
-# export JAVA_HOME=/usr/local/java/jdk-9.0.1
-# export JDK_HOME=/usr/local/java/jdk-9.0.1
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export JDK_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
-# alias netbeans='/usr/local/netbeans-7.2.1/bin/netbeans'
-export ANT_HOME=/home/ericm/jarFiles/apache-ant-1.9.6
-export MAVEN_HOME=/home/ericm/jarFiles/apache-maven-3.2.3
-#- export PATH=$JAVA_HOME/bin:$PATH
-RACKET_HOME=$HOME/racket/bin
-PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:/zEKM/android-sdk-linux/tools:$RACKET_HOME:$ANT_HOME/bin:$PATH
+
+PATH=$JAVA_HOME/bin:$PATH
 
 #- for git
 export EDITOR=nano
-# alias jedit='java -jar /home/ericm/jar.files/jEdit/5.4.0/jedit.jar'
-export BOOT_CLOJURE_VERSION=1.8.0
-
-# This is a good place to source rvm v v v
-#  [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"  # This loads RVM into a shell session.
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-#- EOF
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# export GEM_AUTHORITY_PATH=/home/ericm/tmp/ruby.events/gems
-
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDK TO WORK!!!
 export SDKMAN_DIR="/home/ericm/.sdkman" && source "/home/ericm/.sdkman/bin/sdkman-init.sh"
