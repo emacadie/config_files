@@ -22,6 +22,7 @@
 ;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
 
 
+
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
@@ -82,7 +83,10 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    smartparens
+))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -195,6 +199,12 @@
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1))))))
 
+; https://stackoverflow.com/questions/1128927/how-to-scroll-line-by-line-in-gnu-emacs
+;; package: smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+(setq smooth-scroll-margin 5)
+
 ; (define-key ctl-x-4-map "t" 'toggle-window-split)
 
 (custom-set-variables
@@ -204,7 +214,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (faceup s racket-mode dirtrack-buffer-name-track-mode gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
+    (smooth-scrolling smartparens faceup s racket-mode dirtrack-buffer-name-track-mode gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
 ;; commenting out stuff I might not use
 ;; geiser
 (custom-set-faces
