@@ -26,7 +26,36 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-bright t)
+; (load-theme 'leuven t) ; okay
+; (load-theme 'tomorrow-night-bright t) ; dark
+; (load-theme 'whiteboard t) ; not the best contrast in -nw
+; (load-theme 'emacs-nw t) 
+(load-theme 'vim-colors t) ; this might be perfect
+;; https://emacsthemes.com/themes/vim-colors-theme.html
+;; must be installed from https://github.com/emacs-jp/replace-colorthemes/blob/master/vim-colors-theme.el
+;; bubbleberry-theme.el - dark
+;; chyla-theme.el - okay
+;; color-theme-molokai.el - problems
+;; color-theme-tomorrow.el
+;; 'emacs-nw - gray background in nw
+;; espresso-theme.el - okay
+;; high-contrast-theme.el - okay in terminal
+;; inkpot-theme.el - not good contrast
+;; leuven-theme.el - okay
+;; mccarthy-theme.el - bad contrast on active line
+;; molokai-theme.el - no rainbow on Clojure
+;; naquadah-theme.el - kinda dark
+;; tango-plus-theme.el - light, no parens highlights
+;; tomorrow-night-blue-theme.el
+;; tomorrow-night-bright-theme.el
+;; tomorrow-night-eighties-theme.el
+;; tomorrow-night-theme.el
+;; tomorrow-theme.el
+;; tsdh-light-theme.el - bad contrast when called with -nw, okay otherwise
+;; twilight-theme.el - okay
+;; ujelly-theme.el - bad contrast on linux laptop
+;; zenburn-theme.el - 
+
 
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 140)
