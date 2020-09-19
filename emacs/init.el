@@ -1,3 +1,4 @@
+;; Note: Themes are determined by customizations/ui.el
 ;;;;
 ;; Packages
 ;;;;
