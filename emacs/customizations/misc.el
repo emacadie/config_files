@@ -10,3 +10,9 @@
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
+
+;; Org-mode stuff
+(setq org-log-done 'time)
+
+
+; EOF
