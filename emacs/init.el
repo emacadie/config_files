@@ -221,27 +221,7 @@
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(package-selected-packages
    (quote
-    (go-mode 
-     kotlin-mode 
-     smooth-scrolling 
-     smartparens 
-     faceup 
-     s 
-     racket-mode 
-     dirtrack-buffer-name-track-mode 
-     gradle-mode 
-     json-mode 
-     tagedit 
-     smex 
-     rainbow-delimiters 
-     projectile 
-     paredit 
-     magit 
-     ido-ubiquitous 
-     groovy-mode 
-     exec-path-from-shell 
-     clojure-mode-extra-font-locking 
-     cider)))
+    (go-mode kotlin-mode smooth-scrolling smartparens faceup s racket-mode dirtrack-buffer-name-track-mode gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider)))
  '(safe-local-variable-values
    (quote
     ((cider-ns-refresh-after-fn . "integrant.repl/resume")

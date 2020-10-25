@@ -105,28 +105,35 @@ fi
 # fi
 
 # EKM aliases
-alias dfh='df -h | grep -v '/snap'; showTimeVar'
+alias cp-pruv='cp --verbose --preserve --recursive --update --verbose'
+alias dfh='df --human-readable | grep -v '/snap'; showTimeVar'
+alias duh='du --human-readable --max-depth=1 ./; showTimeVar'
 alias easygit='findRMBackup; setTimeVar ; git add .; git commit -m "$TIME_VAR"'
-alias emacsnw='emacs -nw'
+# -nw is --no-window-system
+alias emacsnw='emacs --no-window-system'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
 alias findBackup='find . -name "*~"'
-alias findRMBackup='find . -name "*~" -exec rm -v {} \;'
-alias igrep='grep -i'
+alias findRMBackup='find . -name "*~" -exec rm --verbose {} \;'
+# -i is --ignore-case
+alias igrep='grep --ignore-case'
 alias launch-nm-applet='dbus-launch nm-applet &'
-alias ls='ls -F --color=never'
+# -F is  --classify
+alias ls='ls --classify --color=never'
 alias mkdirpv='mkdir --parents --verbose'
-alias mvv='mv -v'
+alias mvv='mv --verbose'
 alias nanoc='nano --const'
-alias phistory='history | cut -c 8-'
+# -c is --characters
+alias phistory='history | cut --characters 8-'
 alias psFire='ps -deaf | grep fire; echo `date +%Y-%m-%d_%H.%M.%S`'
 alias randpw='< /dev/urandom tr -dc _A-Z-a-z-0-9\+\.- | head -c${1:-20};echo;'
-alias rmtilde='rm -rvf ./~'
+alias rmtilde='rm --recursive --verbose --force ./~'
 alias runKawa='/home/ericm/jar.files/kawa-2.4/bin/kawa'
 alias setTimeVar='TIME_VAR=`date +%Y-%m-%d_%H.%M.%S`'
 alias showTimeVar='echo `date +%Y-%m-%d_%H.%M.%S`'
 alias sup='su --preserve-environment'
 alias testDisk='dmesg | cat >> dmesg.test.txt'
-alias vgrep='grep -v'
+# -v is same as --invert-match
+alias vgrep='grep --invert-match'
 
 
 # Thunderbird
