@@ -10,6 +10,7 @@
 ;; Show line numbers
 (global-linum-mode)
 
+
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
 ;; (when (fboundp 'tool-bar-mode)
@@ -24,13 +25,24 @@
 ;; for a great explanation of emacs color themes.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html
 ;; for a more technical explanation.
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "/home/ericm/github/config_files/emacs/themes/")
+(add-to-list 'load-path "/home/ericm/github/config_files/emacs/themes/")
+; (load-theme 'bubbleberry t) ; dark
+; (load-theme 'chyla t) ; light, contrast could be better in -nw
+; (load-theme 'emacs-nw t) ; not good in -nw
+(load-theme 'espresso t) ; I like in -nw
+; (load-theme 'high-contrast t) ; do not like in -nw
+; (load-theme 'inkpot t) ; blue
 ; (load-theme 'leuven t) ; okay
+; (load-theme 'mccarthy t) ; not good contrast in -nw
+; (load-theme 'molokai t) ; dark
+; (load-theme 'naquadah t) ; dark
+; (load-theme 'tsdh-light t) ; do not like in -nw
 ; (load-theme 'tomorrow-night-bright t) ; dark
+; (load-theme 'twilight t) ; reverse colors, kind of implied by the name
+; (load-theme 'ujelly t) ; low contrast is the road to hell
+; (load-theme 'vim-colors t) ; this might be perfect, except line numbers are same color as text in -nw
 ; (load-theme 'whiteboard t) ; not the best contrast in -nw
-; (load-theme 'emacs-nw t) 
-(load-theme 'vim-colors t) ; this might be perfect
 ;; https://emacsthemes.com/themes/vim-colors-theme.html
 ;; must be installed from https://github.com/emacs-jp/replace-colorthemes/blob/master/vim-colors-theme.el
 ;; bubbleberry-theme.el - dark
@@ -96,3 +108,10 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; after loading theme
+; (custom-set-faces  '(line-number-current-line ((t (:inherit line-number :background "white" :foreground "red")))))
+; (set-face-foreground 'line-number "#FF0000")
+; (set-face-foreground 'line-number-current-line "#00FF00")
+
+
