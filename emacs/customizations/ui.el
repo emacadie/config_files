@@ -30,6 +30,8 @@
 ; (load-theme 'bubbleberry t) ; dark
 ; (load-theme 'chyla t) ; light, contrast could be better in -nw
 ; (load-theme 'emacs-nw t) ; not good in -nw
+; https://github.com/dgutov/espresso-theme
+; https://melpa.org/#/espresso-theme
 (load-theme 'espresso t) ; I like in -nw
 ; (load-theme 'high-contrast t) ; do not like in -nw
 ; (load-theme 'inkpot t) ; blue
