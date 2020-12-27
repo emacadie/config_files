@@ -106,6 +106,8 @@ fi
 
 # EKM aliases
 alias cp-pruv='cp --verbose --preserve --recursive --update --verbose'
+# I think this one might be better; it does not copy ALL the files
+alias cp-ruv='cp --recursive --update --verbose'
 alias dfh='df --human-readable | grep -v '/snap'; showTimeVar'
 alias duh='du --human-readable --max-depth=1 ./; showTimeVar'
 alias easygit='findRMBackup; setTimeVar ; git add .; git commit -m "$TIME_VAR"'

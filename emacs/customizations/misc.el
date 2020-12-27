@@ -11,12 +11,10 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
-;; Org-mode stuff
-(setq org-log-done 'time)
 
 (add-to-list 'auto-mode-alist '("\.rkt$" . racket-mode))
 (add-to-list 'auto-mode-alist '("\.go$" . go-mode))
 
+(desktop-save-mode 1)
 
-
-                                        ; EOF
+; EOF

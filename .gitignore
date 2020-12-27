@@ -29,6 +29,7 @@ rspec.output
 
 # Ignore the backup files
 *~
+.emacs.desktop
 
 .nrepl-history
 #- EOF

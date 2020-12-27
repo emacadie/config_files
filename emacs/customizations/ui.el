@@ -27,26 +27,38 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "/home/ericm/github/config_files/emacs/themes/")
 (add-to-list 'load-path "/home/ericm/github/config_files/emacs/themes/")
+; (load-theme 'andreas t) ; do not like in nw
 ; (load-theme 'bubbleberry t) ; dark
+; (load-theme 'commentary t) ; I like in -nw
 ; (load-theme 'chyla t) ; light, contrast could be better in -nw
+; (load-theme 'dichromacy t) ; do not like; it looked totally different in https://pawelbx.github.io/emacs-theme-gallery/
 ; (load-theme 'emacs-nw t) ; not good in -nw
 ; https://github.com/dgutov/espresso-theme
 ; https://melpa.org/#/espresso-theme
-(load-theme 'espresso t) ; I like in -nw
+(load-theme 'ekm t)
+; (load-theme 'espresso t) ; I like in -nw
 ; (load-theme 'high-contrast t) ; do not like in -nw
+; (load-theme 'humanoid-light t) ; too many colors
 ; (load-theme 'inkpot t) ; blue
 ; (load-theme 'leuven t) ; okay
 ; (load-theme 'mccarthy t) ; not good contrast in -nw
+; (load-theme 'modus-operandi t) ; line numbers have same background in -nw
 ; (load-theme 'molokai t) ; dark
 ; (load-theme 'naquadah t) ; dark
+; (load-theme 'purp-light t) ; I am getting really tired of this low-contrast trend
 ; (load-theme 'tsdh-light t) ; do not like in -nw
 ; (load-theme 'tomorrow-night-bright t) ; dark
 ; (load-theme 'twilight t) ; reverse colors, kind of implied by the name
 ; (load-theme 'ujelly t) ; low contrast is the road to hell
 ; (load-theme 'vim-colors t) ; this might be perfect, except line numbers are same color as text in -nw
+; (load-theme 'vs-light t) ; not good contrast
 ; (load-theme 'whiteboard t) ; not the best contrast in -nw
 ;; https://emacsthemes.com/themes/vim-colors-theme.html
 ;; must be installed from https://github.com/emacs-jp/replace-colorthemes/blob/master/vim-colors-theme.el
+;; from /usr/share/emacs
+
+
+
 ;; bubbleberry-theme.el - dark
 ;; chyla-theme.el - okay
 ;; color-theme-molokai.el - problems

@@ -4,6 +4,14 @@
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)
 
+; turn off control-Z
+; https://stackoverflow.com/questions/28202546/hitting-ctrl-z-in-emacs-freezes-everything
+; https://old.reddit.com/r/emacs/comments/day1sr/question_how_to_disable_emacs_sleep_key/
+; https://www.fettesps.com/emacs-disable-suspend-button/
+; https://superuser.com/questions/349943/how-to-awake-emacs-gui-after-pressing-ctrlz/349997
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+
 ;; Lisp-friendly hippie expand
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
@@ -71,3 +79,4 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
