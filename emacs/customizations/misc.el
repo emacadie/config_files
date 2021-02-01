@@ -15,6 +15,6 @@
 (add-to-list 'auto-mode-alist '("\.rkt$" . racket-mode))
 (add-to-list 'auto-mode-alist '("\.go$" . go-mode))
 
-(desktop-save-mode 1)
+; (desktop-save-mode 1)
 
 ; EOF

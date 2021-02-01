@@ -145,11 +145,13 @@ alias vgrep='grep --invert-match'
 # export GECKO_SEPARATE_NSPR_LOGS=1
 
 #- Java
-export JAVA_HOME=/home/ericm/jar.files/jdk-12.0.2+10
-export JDK_HOME=/home/ericm/jar.files/jdk-12.0.2+10
+export JDK_VER=jdk-12.0.2+10
+export JDK_VER=jdk-13.0.2+8
+export JDK_VER=jdk-15.0.2+7
+export JAVA_HOME=/home/ericm/jar.files/$JDK_VER
+export JDK_HOME=/home/ericm/jar.files/$JDK_VER
 
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
-
 PATH=$JAVA_HOME/bin:$PATH
 
 #- for git
