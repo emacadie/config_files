@@ -7,3 +7,5 @@ projectile-bookmarks.eld
 themes/
 transient/
 *~
+racket-mode/
+#- EOF
