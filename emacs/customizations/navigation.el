@@ -47,6 +47,7 @@
 (ido-ubiquitous-mode 1)
 
 ;; Shows a list of buffers
+;; key-binding in emacs, but without this the buffer will appear in a new frame (or is it a window?)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 

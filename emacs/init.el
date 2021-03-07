@@ -179,32 +179,6 @@
 ;;    (defvaralias 'c-basic-offset 'tab-width)
 ;;     (defvaralias 'cperl-indent-level 'tab-width)
 
-;; from https://www.emacswiki.org/emacs/ToggleWindowSplit
-;; go back and forth from splitting emacs windows vertically and horizontally
-(defun toggle-window-split ()
-  (interactive)
-  (if (= (count-windows) 2)
-      (let* ((this-win-buffer (window-buffer))
-	     (next-win-buffer (window-buffer (next-window)))
-	     (this-win-edges (window-edges (selected-window)))
-	     (next-win-edges (window-edges (next-window)))
-	     (this-win-2nd (not (and (<= (car this-win-edges)
-					 (car next-win-edges))
-				     (<= (cadr this-win-edges)
-					 (cadr next-win-edges)))))
-	     (splitter
-	      (if (= (car this-win-edges)
-		     (car (window-edges (next-window))))
-		  'split-window-horizontally
-		'split-window-vertically)))
-	(delete-other-windows)
-	(let ((first-win (selected-window)))
-	  (funcall splitter)
-	  (if this-win-2nd (other-window 1))
-	  (set-window-buffer (selected-window) this-win-buffer)
-	  (set-window-buffer (next-window) next-win-buffer)
-	  (select-window first-win)
-	  (if this-win-2nd (other-window 1))))))
 
 ; https://stackoverflow.com/questions/1128927/how-to-scroll-line-by-line-in-gnu-emacs
 ;; package: smooth-scrolling
@@ -226,7 +200,29 @@
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(package-selected-packages
    (quote
-    (elixir-mode mmm-mode go-mode kotlin-mode smooth-scrolling smartparens faceup s racket-mode dirtrack-buffer-name-track-mode gradle-mode json-mode tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous groovy-mode exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (elixir-mode 
+     mmm-mode ; mmm-mode.el --- Allow Multiple Major Modes in a buffer
+     go-mode 
+     kotlin-mode 
+     smooth-scrolling 
+     smartparens 
+     faceup ; faceup.el --- Markup language for faces and font-lock regression testing
+     s ; s.el --- The long lost Emacs string manipulation library. 
+     racket-mode 
+     dirtrack-buffer-name-track-mode 
+     gradle-mode 
+     json-mode 
+     tagedit 
+     smex  ; https://github.com/nonsequitur/smex/ - Smex is a M-x enhancement for Emacs
+     rainbow-delimiters 
+     projectile 
+     paredit 
+     magit 
+     ido-ubiquitous 
+     groovy-mode 
+     exec-path-from-shell 
+     clojure-mode-extra-font-locking 
+     cider)))
  '(safe-local-variable-values
    (quote
     ((cider-ns-refresh-after-fn . "integrant.repl/resume")
