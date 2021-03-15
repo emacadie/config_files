@@ -25,6 +25,7 @@
 ;; for a great explanation of emacs color themes.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html
 ;; for a more technical explanation.
+;; for other machines, may need to change to ~/.emacs.d/config_files/emacs/themes
 (add-to-list 'custom-theme-load-path "/home/ericm/github/config_files/emacs/themes/")
 (add-to-list 'load-path "/home/ericm/github/config_files/emacs/themes/")
 ; (load-theme 'andreas t) ; do not like in nw

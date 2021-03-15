@@ -106,7 +106,6 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
 ;;
@@ -125,7 +124,7 @@
 ;; Customization
 ;;;;
 ;; Scheme, use csi
-(setq scheme-program-name "csi -:c")
+; (setq scheme-program-name "csi -:c")
 
 ;; use Guile
 ;; (setq scheme-program-name "guile")
@@ -136,6 +135,7 @@
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
+;; for other machines besides laptop, may need to change to ~/.emacs.d/config_files/emacs/customizations
 (add-to-list 'load-path "~/github/config_files/emacs/customizations")
 
 ;; Sets up exec-path-from-shell so that Emacs will use the correct
