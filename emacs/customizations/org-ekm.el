@@ -21,9 +21,13 @@
   (goto-char (line-end-position))
   (insert (format-time-string " : %Y-%m-%d_%H:%M:%S")))
 
-
-
+;; https://old.reddit.com/r/emacs/comments/43vfl1/enable_wordwrap_in_orgmode/
+(add-hook 'org-mode-hook #'toggle-word-wrap)
+; the snippet below turns on word wrap for org, from https://www.emacswiki.org/emacs/VisualLineMode
+(add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 ; (add-hook 'org-checkbox-statistics-hook 'date-hook-fn)
 
 
+
 ; EOF
+

@@ -67,7 +67,9 @@
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
-    ido-ubiquitous
+    ; ido-ubiquitous
+    ; now ido-completing-read+
+    ido-completing-read+
 
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
@@ -200,29 +202,30 @@
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(package-selected-packages
    (quote
-    (elixir-mode 
-     mmm-mode ; mmm-mode.el --- Allow Multiple Major Modes in a buffer
-     go-mode 
-     kotlin-mode 
-     smooth-scrolling 
-     smartparens 
-     faceup ; faceup.el --- Markup language for faces and font-lock regression testing
-     s ; s.el --- The long lost Emacs string manipulation library. 
-     racket-mode 
-     dirtrack-buffer-name-track-mode 
-     gradle-mode 
-     json-mode 
-     tagedit 
-     smex  ; https://github.com/nonsequitur/smex/ - Smex is a M-x enhancement for Emacs
-     rainbow-delimiters 
-     projectile 
-     paredit 
-     magit 
-     ido-ubiquitous 
-     groovy-mode 
-     exec-path-from-shell 
+    (cider
      clojure-mode-extra-font-locking 
-     cider)))
+     dirtrack-buffer-name-track-mode 
+     elixir-mode 
+     exec-path-from-shell 
+     faceup ; faceup.el --- Markup language for faces and font-lock regression testing
+     go-mode
+     gradle-mode 
+     groovy-mode 
+     ido-completing-read+
+     json-mode 
+     kotlin-mode 
+     magit 
+     mmm-mode ; mmm-mode.el --- Allow Multiple Major Modes in a buffer
+     paredit 
+     projectile 
+     racket-mode 
+     rainbow-delimiters 
+     s ; s.el --- The long lost Emacs string manipulation library. 
+     smartparens 
+     smex  ; https://github.com/nonsequitur/smex/ - Smex is a M-x enhancement for Emacs
+     smooth-scrolling 
+     tagedit 
+     )))
  '(safe-local-variable-values
    (quote
     ((cider-ns-refresh-after-fn . "integrant.repl/resume")
