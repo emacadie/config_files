@@ -113,6 +113,7 @@ alias duh='du --human-readable --max-depth=1 ./; showTimeVar'
 alias easygit='findRMBackup; setTimeVar ; git add .; git commit -m "$TIME_VAR"'
 # -nw is --no-window-system
 alias emacsnw='emacs --no-window-system'
+alias emacsprelude='emacs --no-window-system --with-profile prelude'
 alias ekmdate='date  +%Y-%m-%d\ %H:%M:%S\ %A\ %Z\ %z'
 alias findBackup='find . -name "*~"'
 alias findRMBackup='find . -name "*~" -exec rm --verbose {} \;'
