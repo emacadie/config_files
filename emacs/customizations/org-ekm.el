@@ -1,4 +1,8 @@
 ;; Org-mode stuff
+; https://github.com/integral-dw/org-bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook #'org-bullets-mode)
+
 ; 't, 'time do same thing
 ; nil gives no time stamp, 'note adds a note (but can't I just add one myself?)
 (setq org-log-done 'time)
