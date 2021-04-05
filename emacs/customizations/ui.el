@@ -10,6 +10,10 @@
 ;; Show line numbers
 (global-linum-mode)
 
+; https://stackoverflow.com/questions/21971940/how-to-set-color-for-linum-in-emacs
+; (set-face-foreground 'linum "red")
+; (set-face-background 'linum "red")
+; (set-face-background 'linum "white")
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.

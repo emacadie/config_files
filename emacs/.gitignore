@@ -4,7 +4,7 @@ elpa/
 ido.last
 network-security.data
 projectile-bookmarks.eld
-themes/
+# themes/
 transient/
 *~
 racket-mode/
