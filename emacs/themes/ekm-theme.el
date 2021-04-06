@@ -93,7 +93,11 @@
 
  '(query-replace ((t (:inherit (isearch)))))
 ; '(linum ((t (:background "#2e2e2e" :foreground "#8b8bcd"))))
-'(linum ((t (:foreground "#000000" :background "#EDEDED"))))
+; this one is okay
+; '(linum ((t (:foreground "#000000" :background "#EDEDED"))))
+; black background, white foreground
+; maybe yellow next time
+'(linum ((t (:foreground "#FFFFFF" :background "#000000"))))
 
 
 )
