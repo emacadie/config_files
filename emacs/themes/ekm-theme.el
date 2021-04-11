@@ -8,8 +8,8 @@
 ;; '(default ((t (:family "default" 
 ;;                        :foundry "default" 
 ;;                        :width normal 
-;;                        :height 1 :
-;;                        weight normal 
+;;                        :height 1 
+;;                        :weight normal 
 ;;                        :slant normal 
 ;;                        :underline nil 
 ;;                        :overline nil 
@@ -199,8 +199,10 @@
 ; '(linum ((t (:foreground "#000000" :background "#EDEDED"))))
 ; black background, white foreground
 ; maybe yellow next time
+; works in linum
 '(linum ((t (:foreground "#FFFFFF" :background "#000000"))))
-
+; works in prelude
+'(line-number ((t (:background "#000000" :foreground "#FFFFFF"))))
 
 )
 

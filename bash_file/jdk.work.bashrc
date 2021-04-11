@@ -111,6 +111,7 @@ alias cp-ruv='cp --recursive --update --verbose'
 alias dfh='df --human-readable | grep -v '/snap'; showTimeVar'
 alias duh='du --human-readable --max-depth=1 ./; showTimeVar'
 alias easygit='findRMBackup; setTimeVar ; git add .; git commit -m "$TIME_VAR"'
+alias emacs-brave='emacs --with-profile brave'
 # -nw is --no-window-system
 alias emacsnw='emacs --no-window-system'
 alias emacsprelude='emacs --no-window-system --with-profile prelude'

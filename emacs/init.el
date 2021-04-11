@@ -202,30 +202,7 @@
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(package-selected-packages
    (quote
-    (cider
-     clojure-mode-extra-font-locking 
-     dirtrack-buffer-name-track-mode 
-     elixir-mode 
-     exec-path-from-shell 
-     faceup ; faceup.el --- Markup language for faces and font-lock regression testing
-     go-mode
-     gradle-mode 
-     groovy-mode 
-     ido-completing-read+
-     json-mode 
-     kotlin-mode 
-     magit 
-     mmm-mode ; mmm-mode.el --- Allow Multiple Major Modes in a buffer
-     paredit 
-     projectile 
-     racket-mode 
-     rainbow-delimiters 
-     s ; s.el --- The long lost Emacs string manipulation library. 
-     smartparens 
-     smex  ; https://github.com/nonsequitur/smex/ - Smex is a M-x enhancement for Emacs
-     smooth-scrolling 
-     tagedit 
-     )))
+    (amx cider clojure-mode-extra-font-locking dirtrack-buffer-name-track-mode elixir-mode exec-path-from-shell faceup go-mode gradle-mode groovy-mode ido-completing-read+ json-mode kotlin-mode magit mmm-mode paredit projectile racket-mode rainbow-delimiters s smartparens smex smooth-scrolling tagedit)))
  '(safe-local-variable-values
    (quote
     ((cider-ns-refresh-after-fn . "integrant.repl/resume")
