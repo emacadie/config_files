@@ -3,6 +3,9 @@
 ; /home/ericm/emacs/prelude/personal/custom.el  
 ; cp -v /home/ericm/emacs/prelude/personal/custom.el /home/ericm/github/config_files/emacs.other/prelude.custom.el
 
+
+(prelude-require-packages '(org-bullets racket-mode paredit))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -27,7 +30,7 @@
      lsp-ui 
      lsp-mode 
      zop-to-char 
-     zenburn-theme 
+     ; zenburn-theme 
      which-key 
      volatile-highlights 
      undo-tree 
@@ -113,10 +116,14 @@
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'racket-mode-hook           #'enable-paredit-mode)
 (add-hook 'racket-repl-mode-hook      #'enable-paredit-mode)
+;; Racket
+(setq racket-program "racket")
 
 ;; Org-mode stuff
 ; https://github.com/integral-dw/org-bullets
-(require 'org-bullets)
+; (require 'org-bullets)
+; now at top
+; (prelude-require-package 'org-bullets)
 (add-hook 'org-mode-hook #'org-bullets-mode)
 
 
