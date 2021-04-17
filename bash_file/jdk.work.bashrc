@@ -155,6 +155,7 @@ export JDK_HOME=/home/ericm/jar.files/$JDK_VER
 
 CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar
 PATH=$JAVA_HOME/bin:$PATH
+PATH=$PATH:/usr/local/go/bin
 
 #- for git
 export EDITOR=nano
