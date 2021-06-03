@@ -200,6 +200,9 @@
  '(custom-safe-themes
    (quote
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+ '(org-agenda-files
+   (quote
+    ("~/tmp/org.mode.course/orgmode-coursefiles/2.4.start.ekm.org")))
  '(package-selected-packages
    (quote
     (amx cider clojure-mode-extra-font-locking dirtrack-buffer-name-track-mode elixir-mode exec-path-from-shell faceup go-mode gradle-mode groovy-mode ido-completing-read+ json-mode kotlin-mode magit mmm-mode paredit projectile racket-mode rainbow-delimiters s smartparens smex smooth-scrolling tagedit)))

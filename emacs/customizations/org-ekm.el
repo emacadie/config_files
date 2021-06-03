@@ -38,5 +38,22 @@
     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
 ; (add-hook 'org-after-todo-statistics-hook #'org-summary-todo)
 
-; EOF
+;; https://orgmode.org/manual/TODO-dependencies.html#TODO-dependencies
+;; If you call org-toggle-ordered-property on a list of TODO items, they will have to be done in order
+;; with this set to "t"
+(set-variable 'org-enforce-todo-dependencies t)
+
+;; https://orgmode.org/manual/Breaking-Down-Tasks.html
+;; If you would like a TODO entry to automatically change to DONE when all children are done, you can use the following setup:
+;; note: You need to add the stat viewers to a TODO list: [/][%]
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
+
+;; EOF
+
 
